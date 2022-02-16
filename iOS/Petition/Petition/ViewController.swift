@@ -75,9 +75,10 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: PetitionTableViewCell.reuseIdentifier, for: indexPath) as? PetitionTableViewCell else { return UITableViewCell() }
-        let petition = petitions[indexPath.row]
-        cell.titleLabel.text = petition.title
-        cell.detailLabel.text = petition.body
+//        let petition = petitions[indexPath.row]
+//        cell.titleLabel.text = petition.title
+//        cell.detailLabel.text = petition.body
+        cell.configureCell(data: petitions[indexPath.row])
         return cell
     }
 }

@@ -54,13 +54,13 @@ class PetitionTableViewCell: UITableViewCell {
             detailLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             detailLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             detailLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
-            detailLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            detailLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8)
 
         ])
     }
     
     func configureCell(data: Petition) {
         titleLabel.text = data.title
-        titleLabel.text = data.body
+        detailLabel.text = data.body
     }
 }
