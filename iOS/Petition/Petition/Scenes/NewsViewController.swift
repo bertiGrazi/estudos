@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  NewsViewController.swift
 //  Petition
 //
 //  Created by Grazielli Berti on 16/02/22.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ViewController: UIViewController {
+class NewsViewController: UIViewController {
     //MARK: Variable
     var petitions = [Petition]()
     let cellHeight: CGFloat = 50
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     //MARK: Views
     let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(PetitionTableViewCell.self, forCellReuseIdentifier: PetitionTableViewCell.reuseIdentifier)
+        tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.reuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
@@ -68,16 +68,13 @@ class ViewController: UIViewController {
 }
 
 //MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
+extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return petitions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: PetitionTableViewCell.reuseIdentifier, for: indexPath) as? PetitionTableViewCell else { return UITableViewCell() }
-//        let petition = petitions[indexPath.row]
-//        cell.titleLabel.text = petition.title
-//        cell.detailLabel.text = petition.body
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseIdentifier, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
         cell.configureCell(data: petitions[indexPath.row])
         return cell
     }

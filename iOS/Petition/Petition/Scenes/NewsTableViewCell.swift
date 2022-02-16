@@ -1,5 +1,5 @@
 //
-//  PetitionTableViewCell.swift
+//  NewsTableViewCell.swift
 //  Petition
 //
 //  Created by Grazielli Berti on 16/02/22.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class PetitionTableViewCell: UITableViewCell {
+class NewsTableViewCell: UITableViewCell {
     //MARK: - Variable
-    static let reuseIdentifier =  "petitionTableViewCell"
+    static let reuseIdentifier =  "newsTableViewCell"
 
     //MARK: - View
     let titleLabel: UILabel = {
