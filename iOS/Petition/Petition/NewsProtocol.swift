@@ -6,3 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
+protocol NewsProtocol {
+    func parseOurJSONIntoArray(json: Data)
+}

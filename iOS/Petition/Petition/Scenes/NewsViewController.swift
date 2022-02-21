@@ -10,7 +10,7 @@ import UIKit
 
 class NewsViewController: UIViewController {
     //MARK: Variable
-    var petitions = [Petition]()
+    var viewModel = NewsViewModel()
     let cellHeight: CGFloat = 50
     
     //MARK: Views
@@ -29,28 +29,7 @@ class NewsViewController: UIViewController {
         
         setupView()
         configureConstrains()
-        loadData()
-    }
-    
-    fileprivate func loadData() {
-        let urlString = "https://www.hackingwithswift.com/samples/petitions-1.json"
-        
-        if let url = URL(string: urlString) {
-            if let data = try? Data(contentsOf: url) {
-                parseOurJSONIntoArray(json: data)
-                print(data)
-            }
-        }
-    }
-    
-    fileprivate func parseOurJSONIntoArray(json: Data) {
-        let decoder = JSONDecoder()
-        
-        if let jsonPetitions = try? decoder.decode(Petitions.self, from: json) {
-            petitions = jsonPetitions.results
-            print(jsonPetitions)
-            tableView.reloadData()
-        }
+        //loadData()
     }
     
     fileprivate func setupView() {
@@ -70,12 +49,14 @@ class NewsViewController: UIViewController {
 //MARK: - UITableViewDataSource
 extension NewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return petitions.count
+        return viewModel.loadData().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseIdentifier, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
-        cell.configureCell(data: petitions[indexPath.row])
+        let petition = viewModel.loadData()[indexPath.row]
+        cell.titleLabel.text = (petition as AnyObject).title
+        cell.detailLabel.text = (petition as AnyObject).body
         return cell
     }
 }

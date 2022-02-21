@@ -19,6 +19,7 @@
 		B192B2FE27BD75020056740B /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B192B2FD27BD75020056740B /* NewsTableViewCell.swift */; };
 		B1EDCF5D27BDC14C00995274 /* NewsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EDCF5C27BDC14C00995274 /* NewsProtocol.swift */; };
 		B1EDCF6227BDC15E00995274 /* NewsBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EDCF6127BDC15E00995274 /* NewsBusinessModel.swift */; };
+		B1EDCF6727BDC2F000995274 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1EDCF6627BDC2F000995274 /* NewsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B192B2FD27BD75020056740B /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		B1EDCF5C27BDC14C00995274 /* NewsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsProtocol.swift; sourceTree = "<group>"; };
 		B1EDCF6127BDC15E00995274 /* NewsBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsBusinessModel.swift; sourceTree = "<group>"; };
+		B1EDCF6627BDC2F000995274 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 		B1EDCF5327BDC05E00995274 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				B1EDCF6627BDC2F000995274 /* NewsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B192B2BF27BD71480056740B /* NewsViewController.swift in Sources */,
+				B1EDCF6727BDC2F000995274 /* NewsViewModel.swift in Sources */,
 				B192B2EE27BD71940056740B /* Petition.swift in Sources */,
 				B1EDCF5D27BDC14C00995274 /* NewsProtocol.swift in Sources */,
 				B192B2BB27BD71480056740B /* AppDelegate.swift in Sources */,
