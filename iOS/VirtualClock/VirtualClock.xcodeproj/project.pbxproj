@@ -15,6 +15,7 @@
 		B167B45827C6ED4F00FE2090 /* VirtualClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B45727C6ED4F00FE2090 /* VirtualClockTests.swift */; };
 		B167B46327C6ED4F00FE2090 /* VirtualClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B46227C6ED4F00FE2090 /* VirtualClockUITests.swift */; };
 		B167B48F27C6F11500FE2090 /* ReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */; };
+		B167B49F27C6FE9C00FE2090 /* FormatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B49E27C6FE9C00FE2090 /* FormatTime.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B167B46227C6ED4F00FE2090 /* VirtualClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VirtualClockUITests.swift; sourceTree = "<group>"; };
 		B167B46427C6ED4F00FE2090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsViewController.swift; sourceTree = "<group>"; };
+		B167B49E27C6FE9C00FE2090 /* FormatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTime.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +148,8 @@
 		B167B47C27C6EE8500FE2090 /* Registry */ = {
 			isa = PBXGroup;
 			children = (
-				B167B44427C6ED4E00FE2090 /* RegistryViewController.swift */,
+				B167B4A727C6FF8100FE2090 /* Controller */,
+				B167B4A327C6FF7900FE2090 /* Model */,
 			);
 			path = Registry;
 			sourceTree = "<group>";
@@ -166,6 +169,22 @@
 				B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */,
 			);
 			path = Receipts;
+			sourceTree = "<group>";
+		};
+		B167B4A327C6FF7900FE2090 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B167B49E27C6FE9C00FE2090 /* FormatTime.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B167B4A727C6FF8100FE2090 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B167B44427C6ED4E00FE2090 /* RegistryViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B167B44527C6ED4E00FE2090 /* RegistryViewController.swift in Sources */,
+				B167B49F27C6FE9C00FE2090 /* FormatTime.swift in Sources */,
 				B167B48F27C6F11500FE2090 /* ReceiptsViewController.swift in Sources */,
 				B167B44127C6ED4E00FE2090 /* AppDelegate.swift in Sources */,
 				B167B44327C6ED4E00FE2090 /* SceneDelegate.swift in Sources */,
