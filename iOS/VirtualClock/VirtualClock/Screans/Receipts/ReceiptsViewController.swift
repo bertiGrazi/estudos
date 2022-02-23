@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ReceiptsViewController.swift
 //  VirtualClock
 //
 //  Created by Grazielli Berti on 23/02/22.
@@ -7,13 +7,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ReceiptsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .link
     }
-
-
 }
-
