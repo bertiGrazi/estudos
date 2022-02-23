@@ -9,6 +9,7 @@ import UIKit
 
 class RegistryViewController: UIViewController {
     //MARK: - Variable
+    private var time: Timer?
     
     //MARK: - View
     let viewHour: UIView = {
@@ -26,7 +27,6 @@ class RegistryViewController: UIViewController {
         label.textColor = .systemGray
         label.textAlignment = .center
         label.numberOfLines = 0
-        label.text = "12:12"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -38,6 +38,30 @@ class RegistryViewController: UIViewController {
         viewHour.layer.cornerRadius = view.layer.bounds.width/4
         setupView()
         setupControllers()
+        updateSchedule()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        configTimer()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        time?.invalidate()
+    }
+    
+    private func configTimer() {
+        time = Timer.scheduledTimer(
+            timeInterval: 1,
+            target: self,
+            selector: #selector(updateSchedule),
+            userInfo: nil,
+            repeats: true
+        )
+    }
+    
+    @objc func updateSchedule() {
+        let currentTime = FormatTime().getHour(Date())
+        labelHour.text = currentTime
     }
     
     fileprivate func setupView() {
