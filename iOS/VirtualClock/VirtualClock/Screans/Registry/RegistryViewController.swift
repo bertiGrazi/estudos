@@ -23,7 +23,7 @@ class RegistryViewController: UIViewController {
     let labelHour: UILabel = {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 52, weight: .bold)
-        label.tintColor = .systemGray
+        label.textColor = .systemGray
         label.textAlignment = .center
         label.numberOfLines = 0
         label.text = "12:12"
