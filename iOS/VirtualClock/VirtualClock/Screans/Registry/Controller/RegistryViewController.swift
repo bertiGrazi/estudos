@@ -30,6 +30,18 @@ class RegistryViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let registryButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Registrar Ponto", for: .normal)
+        button.backgroundColor = .link
+        button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 5
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +79,7 @@ class RegistryViewController: UIViewController {
     fileprivate func setupView() {
         view.addSubview(viewHour)
         viewHour.addSubview(labelHour)
+        view.addSubview(registryButton)
     }
     
     fileprivate func setupControllers() {
@@ -78,6 +91,10 @@ class RegistryViewController: UIViewController {
             
             labelHour.centerXAnchor.constraint(equalTo: viewHour.centerXAnchor),
             labelHour.centerYAnchor.constraint(equalTo: viewHour.centerYAnchor),
+            
+            registryButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            registryButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            registryButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
     }
 }
