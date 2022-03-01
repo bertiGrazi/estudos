@@ -93,14 +93,23 @@ class HomeViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func registrarButton(_ sender: UIButton) {
-        tentaAbrirCamera()
+//        tentaAbrirCamera()
+        
+        let recibo = Recibo(status: false, data: Date(), foto: UIImage(), latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
+        recibo.salvar(contexto)
+        
+        let reciboService = ReciboService()
+        reciboService.post(recibo)
     }
 }
 
 extension HomeViewController: CameraDelegate {
     func didSelectFoto(_ image: UIImage) {
-        let recibo = Recibo(status: false, data: Date(), foto: image, latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
-        recibo.salvar(contexto)
+//        let recibo = Recibo(status: false, data: Date(), foto: image, latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
+//        recibo.salvar(contexto)
+//
+//        let reciboService = ReciboService()
+//        reciboService.post(recibo)
     }
 }
 
