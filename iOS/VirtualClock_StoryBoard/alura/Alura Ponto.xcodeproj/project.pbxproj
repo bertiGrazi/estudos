@@ -26,6 +26,7 @@
 		03E880B22704FC4400033A34 /* Recibo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03E880B12704FC4400033A34 /* Recibo.swift */; };
 		03FC8D5827306CEE00406136 /* AutenticacaoLocal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FC8D5727306CEE00406136 /* AutenticacaoLocal.swift */; };
 		03FDE29A270A3F06004053A7 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FDE299270A3F06004053A7 /* Camera.swift */; };
+		830089D8CF94F2BCC571D1BA /* Pods_Alura_Ponto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 049064ECA4A39898613293BB /* Pods_Alura_Ponto.framework */; };
 		B1E5874527CED7640072DA09 /* ReciboService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1E5874427CED7640072DA09 /* ReciboService.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,9 @@
 		03E880B12704FC4400033A34 /* Recibo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recibo.swift; sourceTree = "<group>"; };
 		03FC8D5727306CEE00406136 /* AutenticacaoLocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutenticacaoLocal.swift; sourceTree = "<group>"; };
 		03FDE299270A3F06004053A7 /* Camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		049064ECA4A39898613293BB /* Pods_Alura_Ponto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alura_Ponto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10E3110612E8B0FEB87ECC94 /* Pods-Alura Ponto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alura Ponto.debug.xcconfig"; path = "Target Support Files/Pods-Alura Ponto/Pods-Alura Ponto.debug.xcconfig"; sourceTree = "<group>"; };
+		56FB43FEA14C2BAC09BDDB9D /* Pods-Alura Ponto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alura Ponto.release.xcconfig"; path = "Target Support Files/Pods-Alura Ponto/Pods-Alura Ponto.release.xcconfig"; sourceTree = "<group>"; };
 		B1E5874427CED7640072DA09 /* ReciboService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReciboService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				830089D8CF94F2BCC571D1BA /* Pods_Alura_Ponto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +75,8 @@
 			children = (
 				030EF1A426FBD61C000D3E42 /* Alura Ponto */,
 				030EF1A326FBD61C000D3E42 /* Products */,
+				90B2AE61374BFE636627E0AC /* Pods */,
+				7E1936429E4C9AC931CBD9DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +220,24 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		7E1936429E4C9AC931CBD9DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				049064ECA4A39898613293BB /* Pods_Alura_Ponto.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		90B2AE61374BFE636627E0AC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10E3110612E8B0FEB87ECC94 /* Pods-Alura Ponto.debug.xcconfig */,
+				56FB43FEA14C2BAC09BDDB9D /* Pods-Alura Ponto.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B1E5874327CED7400072DA09 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,9 +253,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 030EF1B626FBD61E000D3E42 /* Build configuration list for PBXNativeTarget "Alura Ponto" */;
 			buildPhases = (
+				5BA5E430AB24335D3C27058C /* [CP] Check Pods Manifest.lock */,
 				030EF19E26FBD61C000D3E42 /* Sources */,
 				030EF19F26FBD61C000D3E42 /* Frameworks */,
 				030EF1A026FBD61C000D3E42 /* Resources */,
+				991E9DDA9DAEEE3E31B0477E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -288,6 +315,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5BA5E430AB24335D3C27058C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Alura Ponto-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		991E9DDA9DAEEE3E31B0477E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alura Ponto/Pods-Alura Ponto-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Alura Ponto/Pods-Alura Ponto-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Alura Ponto/Pods-Alura Ponto-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		030EF19E26FBD61C000D3E42 /* Sources */ = {
@@ -443,6 +512,7 @@
 		};
 		030EF1B726FBD61E000D3E42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10E3110612E8B0FEB87ECC94 /* Pods-Alura Ponto.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -462,6 +532,7 @@
 		};
 		030EF1B826FBD61E000D3E42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56FB43FEA14C2BAC09BDDB9D /* Pods-Alura Ponto.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
