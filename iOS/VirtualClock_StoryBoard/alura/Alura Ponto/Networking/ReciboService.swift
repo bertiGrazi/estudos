@@ -9,7 +9,7 @@ import Foundation
 
 //Responsavel para criar as requisições que será salva
 class ReciboService {
-    func post(_ recibo: Recibo) {
+    func post(_ recibo: Recibo, completion: @escaping(_ salvo:Bool) -> Void) {
         let baseURL = "http://localhost:8080/"
         let path = "recibos"
         
@@ -37,20 +37,14 @@ class ReciboService {
         requisicao.httpBody = body
         
         //dataTask = é o que de fato faz a requisição
-        URLSession.shared.dataTask(with: requisicao) { data, resposta, erro in
-            if let resposta = resposta {
-                print(resposta)
+        URLSession.shared.dataTask(with: requisicao) { data, resposta, error in
+            if error == nil {
+                completion(true)
+                
+                return
             }
             
-            if let data = data {
-                do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                        print(json)
-                    
-                } catch {
-                    print(erro)
-                }
-            }
+            completion(false)
         }.resume() //para executar a requisição
     }
 }

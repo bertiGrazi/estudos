@@ -33,9 +33,9 @@ class HomeViewController: UIViewController {
     
     lazy var gerenciadorDeLocalizacao = CLLocationManager()
     private lazy var localizacao = Localizacao()
+    private lazy var reciboService = ReciboService()
     
     // MARK: - View life cycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         configuraView()
@@ -96,10 +96,14 @@ class HomeViewController: UIViewController {
 //        tentaAbrirCamera()
         
         let recibo = Recibo(status: false, data: Date(), foto: UIImage(), latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
-        recibo.salvar(contexto)
-        
-        let reciboService = ReciboService()
-        reciboService.post(recibo)
+         
+        reciboService.post(recibo) { [weak self] salvo in
+            if !salvo {
+                //estou salvando localmente
+                guard let contexto = self?.contexto else { return }
+                recibo.salvar(contexto)
+            }
+        }
     }
 }
 
