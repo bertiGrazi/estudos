@@ -54,7 +54,7 @@ class ReceiptsTableViewCell: UITableViewCell {
         // Delete Receipts Button
     fileprivate let deleteReceiptsButton: UIButton = {
         let button = UIButton()
-        button.setTitle("x", for: .normal)
+        button.setTitle("OI", for: .normal)
         button.backgroundColor = .link
         button.setTitleColor(.darkGray, for: .normal)
         button.layer.masksToBounds = true
@@ -86,6 +86,12 @@ class ReceiptsTableViewCell: UITableViewCell {
             stackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
+            
+            deleteReceiptsButton.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 12),
+            deleteReceiptsButton.trailingAnchor.constraint(equalTo: stackView.trailingAnchor, constant: -12),
+            deleteReceiptsButton.widthAnchor.constraint(equalToConstant: 20),
+            deleteReceiptsButton.heightAnchor.constraint(equalToConstant: 20),
+            
             
             statusLabel.topAnchor.constraint(equalTo: stackView.topAnchor, constant: 12),
             statusLabel.leadingAnchor.constraint(equalTo: stackView.leadingAnchor, constant: 8),
