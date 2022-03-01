@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B105AAA727C7B839004D2CFB /* ReceiptsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B105AAA627C7B839004D2CFB /* ReceiptsTableViewCell.swift */; };
+		B105AAB227C7C12C004D2CFB /* Receipts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B105AAB127C7C12C004D2CFB /* Receipts.swift */; };
 		B167B44127C6ED4E00FE2090 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B44027C6ED4E00FE2090 /* AppDelegate.swift */; };
 		B167B44327C6ED4E00FE2090 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B44227C6ED4E00FE2090 /* SceneDelegate.swift */; };
 		B167B44527C6ED4E00FE2090 /* RegistryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B44427C6ED4E00FE2090 /* RegistryViewController.swift */; };
@@ -16,6 +18,9 @@
 		B167B46327C6ED4F00FE2090 /* VirtualClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B46227C6ED4F00FE2090 /* VirtualClockUITests.swift */; };
 		B167B48F27C6F11500FE2090 /* ReceiptsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */; };
 		B167B49F27C6FE9C00FE2090 /* FormatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = B167B49E27C6FE9C00FE2090 /* FormatTime.swift */; };
+		B18AAA1427CE8B0500551F9E /* ReceiptsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AAA1327CE8B0500551F9E /* ReceiptsProtocol.swift */; };
+		B18AAA1C27CE8B8700551F9E /* ReceiptsBusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AAA1B27CE8B8700551F9E /* ReceiptsBusinessModel.swift */; };
+		B18AAA2127CE8CED00551F9E /* ReceiptsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18AAA2027CE8CED00551F9E /* ReceiptsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B105AAA627C7B839004D2CFB /* ReceiptsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsTableViewCell.swift; sourceTree = "<group>"; };
+		B105AAB127C7C12C004D2CFB /* Receipts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipts.swift; sourceTree = "<group>"; };
 		B167B43D27C6ED4E00FE2090 /* VirtualClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VirtualClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B167B44027C6ED4E00FE2090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B167B44227C6ED4E00FE2090 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +58,9 @@
 		B167B46427C6ED4F00FE2090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsViewController.swift; sourceTree = "<group>"; };
 		B167B49E27C6FE9C00FE2090 /* FormatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatTime.swift; sourceTree = "<group>"; };
+		B18AAA1327CE8B0500551F9E /* ReceiptsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsProtocol.swift; sourceTree = "<group>"; };
+		B18AAA1B27CE8B8700551F9E /* ReceiptsBusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsBusinessModel.swift; sourceTree = "<group>"; };
+		B18AAA2027CE8CED00551F9E /* ReceiptsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +88,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B105AAAC27C7C0F8004D2CFB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */,
+				B105AAA627C7B839004D2CFB /* ReceiptsTableViewCell.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B105AAB027C7C107004D2CFB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B105AAB127C7C12C004D2CFB /* Receipts.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		B167B43427C6ED4E00FE2090 = {
 			isa = PBXGroup;
 			children = (
@@ -166,7 +193,10 @@
 		B167B48D27C6F0E500FE2090 /* Receipts */ = {
 			isa = PBXGroup;
 			children = (
-				B167B48E27C6F11500FE2090 /* ReceiptsViewController.swift */,
+				B18AAA1227CE8AE000551F9E /* BusinessModel */,
+				B105AAB027C7C107004D2CFB /* Model */,
+				B105AAAC27C7C0F8004D2CFB /* Controller */,
+				B18AAA2027CE8CED00551F9E /* ReceiptsViewModel.swift */,
 			);
 			path = Receipts;
 			sourceTree = "<group>";
@@ -185,6 +215,15 @@
 				B167B44427C6ED4E00FE2090 /* RegistryViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		B18AAA1227CE8AE000551F9E /* BusinessModel */ = {
+			isa = PBXGroup;
+			children = (
+				B18AAA1327CE8B0500551F9E /* ReceiptsProtocol.swift */,
+				B18AAA1B27CE8B8700551F9E /* ReceiptsBusinessModel.swift */,
+			);
+			path = BusinessModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,8 +355,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B18AAA2127CE8CED00551F9E /* ReceiptsViewModel.swift in Sources */,
+				B105AAB227C7C12C004D2CFB /* Receipts.swift in Sources */,
+				B18AAA1C27CE8B8700551F9E /* ReceiptsBusinessModel.swift in Sources */,
 				B167B44527C6ED4E00FE2090 /* RegistryViewController.swift in Sources */,
+				B18AAA1427CE8B0500551F9E /* ReceiptsProtocol.swift in Sources */,
 				B167B49F27C6FE9C00FE2090 /* FormatTime.swift in Sources */,
+				B105AAA727C7B839004D2CFB /* ReceiptsTableViewCell.swift in Sources */,
 				B167B48F27C6F11500FE2090 /* ReceiptsViewController.swift in Sources */,
 				B167B44127C6ED4E00FE2090 /* AppDelegate.swift in Sources */,
 				B167B44327C6ED4E00FE2090 /* SceneDelegate.swift in Sources */,
