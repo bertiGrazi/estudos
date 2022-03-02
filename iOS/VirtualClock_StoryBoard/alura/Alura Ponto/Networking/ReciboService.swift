@@ -11,7 +11,7 @@ import Alamofire
 //Responsavel para criar as requisições que será salva
 class ReciboService {
     
-    func get() {
+    func get(completion: @escaping(_ recibos: [Recibo]?, _ error: Error?) -> Void) {
         AF.request("http://localhost:8080/recibos", method: .get, headers: ["Accept": "application/json"]).responseJSON { resposta in
             switch resposta.result {
             case .success(let json):
@@ -25,10 +25,12 @@ class ReciboService {
                             recibos.append(novoRecibo)
                         }
                     }
+                    
+                    completion(recibos, nil)
                 }
                 break
             case .failure(let error):
-                print(error.localizedDescription)
+                completion(nil, error)
                 break
             }
         }

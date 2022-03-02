@@ -22,24 +22,7 @@ class ReciboViewController: UIViewController {
     private lazy var camera = Camera()
     private lazy var controladorDeImage = UIImagePickerController()
     private lazy var reciboService = ReciboService()
-    
-    var contexto: NSManagedObjectContext = {
-        let contexto = UIApplication.shared.delegate as! AppDelegate
-        
-        return contexto.persistentContainer.viewContext
-    }()
-    
-    let buscador: NSFetchedResultsController<Recibo> = {
-        let fetchRequest: NSFetchRequest<Recibo> = Recibo.fetchRequest()
-        let sortDescriptor = NSSortDescriptor(key: "data", ascending: false)
-        fetchRequest.sortDescriptors = [sortDescriptor]
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        return NSFetchedResultsController(fetchRequest: fetchRequest,
-                                          managedObjectContext: appDelegate.persistentContainer.viewContext,
-                                          sectionNameKeyPath: nil,
-                                          cacheName: nil)
-    }()
+    private var recibos: [Recibo] = []
     
     // MARK: - View life cycle
 
@@ -47,7 +30,6 @@ class ReciboViewController: UIViewController {
         super.viewDidLoad()
         configuraTableView()
         configuraViewFoto()
-        buscador.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -59,9 +41,14 @@ class ReciboViewController: UIViewController {
     // MARK: - Class methods
     
     func getRecibos() {
-        Recibo.carregar(buscador)
         
-        reciboService.get()
+        reciboService.get { [weak self] resposta, error in
+            if error == nil {
+                guard let recibos = resposta else { return }
+                self?.recibos = recibos
+                self?.reciboTableView.reloadData()
+            }
+        }
     }
     
     func getFotoDePerfil() {
@@ -106,7 +93,7 @@ class ReciboViewController: UIViewController {
 
 extension ReciboViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return buscador.fetchedObjects?.count ?? 0
+        return recibos.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,7 +101,7 @@ extension ReciboViewController: UITableViewDataSource {
             fatalError("erro ao criar ReciboTableViewCell")
         }
         
-        let recibo = buscador.fetchedObjects?[indexPath.row]
+        let recibo = recibos[indexPath.row]
         cell.configuraCelula(recibo)
         cell.delegate = self
         cell.deletarButton.tag = indexPath.row
@@ -130,7 +117,7 @@ extension ReciboViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let recibo = buscador.fetchedObjects?[indexPath.row]
+        let recibo = recibos[indexPath.row]
         let mapaViewController = MapaViewController.instanciar(recibo)
         mapaViewController.modalPresentationStyle = .automatic
         
@@ -142,8 +129,7 @@ extension ReciboViewController: ReciboTableViewCellDelegate {
     func deletarRecibo(_ index: Int) {
         AutenticacaoLocal().autorizaUsuario { autenticado in
             if autenticado {
-                guard let recibo = self.buscador.fetchedObjects?[index] else { return }
-                recibo.deletar(self.contexto)
+                let recibo = self.recibos[index]
             }
         }
     }
@@ -154,20 +140,5 @@ extension ReciboViewController: CameraDelegate {
         Perfil().salvarImagem(image)
         escolhaFotoButton.isHidden = true
         fotoPerfilImageView.image = image
-    }
-}
-
-extension ReciboViewController: NSFetchedResultsControllerDelegate {
-    
-    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
-        case .delete:
-            if let indexPath = indexPath {
-                reciboTableView.deleteRows(at: [indexPath], with: .fade)
-            }
-            break
-        default:
-            reciboTableView.reloadData()
-        }
     }
 }

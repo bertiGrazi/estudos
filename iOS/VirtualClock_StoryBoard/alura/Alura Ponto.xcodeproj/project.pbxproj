@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -91,12 +91,12 @@
 		030EF1A426FBD61C000D3E42 /* Alura Ponto */ = {
 			isa = PBXGroup;
 			children = (
-				B1E5874327CED7400072DA09 /* Networking */,
 				030EF1B926FBD69B000D3E42 /* AppDelegate */,
 				030EF1BC26FBD6B8000D3E42 /* Home */,
 				030EF1CF26FBE686000D3E42 /* Recibo */,
 				03318BBB2731C3F000C0F154 /* Mapa */,
 				03431DD02703BD0A00EB8D91 /* CoreData */,
+				B1E5874327CED7400072DA09 /* Networking */,
 				030EF1AE26FBD61E000D3E42 /* Assets.xcassets */,
 				030EF1B026FBD61E000D3E42 /* LaunchScreen.storyboard */,
 				030EF1B326FBD61E000D3E42 /* Info.plist */,
@@ -234,7 +234,6 @@
 				10E3110612E8B0FEB87ECC94 /* Pods-Alura Ponto.debug.xcconfig */,
 				56FB43FEA14C2BAC09BDDB9D /* Pods-Alura Ponto.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
