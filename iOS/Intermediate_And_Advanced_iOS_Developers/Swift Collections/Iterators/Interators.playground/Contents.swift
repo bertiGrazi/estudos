@@ -65,3 +65,22 @@ var count = countdown.makeIterator()
 while let num = count.next() {
     print(num)
 }
+
+struct CountdownDoc: Sequence, IteratorProtocol {
+var count: Int
+
+mutating func next() -> Int? {
+    if count == 0 {
+        return nil
+    } else {
+        defer { count -= 1 }
+        return count
+    }
+}
+}
+
+
+let threeToGo = CountdownDoc(count: 3)
+for i in threeToGo {
+    print(i)
+}
