@@ -22,5 +22,4 @@ public class TesteGuardadorDeReferencia {
 		Conta ref = (Conta) guardadorRef.getReferencia(1);
 		System.out.println(ref.getAgencia());
 	}
-
 }
