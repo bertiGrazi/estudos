@@ -93,8 +93,24 @@ public abstract class Conta extends Object {
     }
     
     @Override
+    public boolean equals(Object ref) {
+    	
+    	//transformando a referencia generica em uma especifica 
+    	Conta outra = (Conta) ref;
+    	
+    	if(this.agencia != outra.agencia) {
+    		return false;
+    	} 
+    	
+    	if(this.numero != outra.numero) {
+    		return false;
+    	}
+    	
+    	return true;
+    }
+    
+    @Override
 	public String toString() {
 		return "Numero: " + this.numero + ", Agencia: " + this.agencia;
 	}
-
 }
