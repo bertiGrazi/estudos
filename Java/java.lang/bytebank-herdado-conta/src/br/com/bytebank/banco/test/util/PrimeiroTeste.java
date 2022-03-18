@@ -9,7 +9,11 @@ public class PrimeiroTeste {
 
 	public static void main(String[] args) {
 		
-		ArrayList lista = new ArrayList();
+		//Generics
+		//Evitar casts excessivos
+		//Cliente ref = (Cliente) lista.get(0);
+		
+		ArrayList<Conta> lista = new ArrayList<Conta>();
 		
 		Conta cc = new ContaCorrente(22, 11);
 		lista.add(cc);
@@ -39,5 +43,4 @@ public class PrimeiroTeste {
 			System.out.println(oRef);
 		}
 	}
-
 }
