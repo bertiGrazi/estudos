@@ -27,3 +27,26 @@ img {
     display: block;
     max-width: 100%; /*Máximo da altura dela e responsividade*/
 }
+
+/*Super-info*/
+.superinfo-bg {
+    background: #122ab2;
+    color: white;
+}
+
+.superinfo-bg a {
+    color: white;
+}
+
+.superinfo {
+    max-width: 960px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0px auto;
+    padding-top: 10px;
+}
+
+.superinfo p, .superinfo a {
+    margin: 0 10px 10px 10px;
+}
