@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Poppins:wght@100;600&display=swap');
 
 body, h1, ul, li, p, dt, dd {
     margin: 0px;
@@ -57,3 +58,148 @@ body {
     grid-gap: 20px;
     margin-top: 4rem;
 }
+
+.title {
+    font-family: "Playfair Display SC", georgia;
+    font-size: 6rem;
+    line-height: 1;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    grid-column: 1 / 4;
+}
+
+.animals h2 {
+    font-family: "Poppins", monospace;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-bottom: 1rem;
+    color: #02403f;
+}
+
+.animals h2::before {
+   content: "";
+   display: inline-block;
+   width: 40px;
+   height: 10px;
+   margin-right: 10px;
+   background: #d3380a;
+}
+
+.animals p {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.animals-list {
+    height: 370px;
+    overflow-y: scroll;
+    grid-column: 2;
+}
+
+.animals-list::-webkit-scrollbar {
+    width: 18px;
+}
+
+.animals-list::-webkit-scrollbar-thumb {
+    background: #d3380a;
+    border-left: 4px solid white;
+    border-right: 4px solid white;
+}
+
+.animals-list::-webkit-scrollbar-track {
+    background: white;
+}
+
+.animals-descriptions {
+    grid-column: 3;
+}
+
+.animals-descriptions section {
+   margin-bottom: 3rem;
+}
+
+.faq-list {
+    grid-column: 2 / 4;
+}
+
+.faq-list dt {
+    font-family: "Poppins", monospace;
+    font-weight: bold;
+    margin-top: 2rem;
+    margin-bottom: .5rem;
+    color: #d3380a;
+}
+
+.faq-list dt::before {
+   content: "";
+   display: inline-block;
+   width: 20px;
+   height: 10px;
+   margin-right: 10px;
+   background: #02403f;
+}
+
+
+.map {
+    grid-column: 2;
+  }
+  
+  .dados {
+    grid-column: 3;
+  }
+  
+  .dados li {
+    margin-bottom: 1rem;
+    font-family: Helvetica, Arial;
+  }
+  
+  .dados li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 10px;
+    margin-right: 10px;
+    background: #d3380a;
+  }
+  
+  .copy {
+    grid-column: 1/5;   
+    background: #02403f;
+    color: white;
+  }
+  
+  .copy p {
+    padding: 20px;
+    font-family: "Poppins", monospace;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 700px) {
+    body {
+      grid-template-columns: 1fr;
+    }
+    .menu, .grid-section, .copy {
+      grid-column: 1;
+    }
+    .grid-section {
+      grid-template-columns: 100px 1fr;
+      grid-gap: 10px;
+    }
+    .animals-list {
+      grid-column: 1;
+    }
+    .faq-lista, .dados, .map {
+      grid-column: 1 / 3;
+    }
+    .grid-section h1 {
+      font-size: 3rem;
+    }
+    .menu {
+      margin-top: 0px;
+    }
+    .copy {
+      margin-bottom: 0px;
+    }
+  }
