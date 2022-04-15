@@ -12,8 +12,14 @@ const app = express();
 
 //Primeiro Parâmetro: Rota 
 app.get("/test", (req, res) => {
-  return res.send("Olá NLW Oi")
+  return res.send("Olá NLW. ")
 })
+
+app.post("/test-post", (req, res) => 
+{
+  return res.send("Olá, NWL método POST")
+})
+
 
 //Porta que vamos executar o projeto: http: //localhost: 3000
 app.listen(8000, () =>  { 
