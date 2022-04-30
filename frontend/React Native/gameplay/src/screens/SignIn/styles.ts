@@ -16,18 +16,19 @@ export const styles = StyleSheet.create(
     },
     content: {
       marginTop: -60,
+      paddingHorizontal: 50,
     },
     title: {
       color: theme.colors.heading,
       textAlign: 'center',
-      fontSize: 40,
+      fontSize: 30,
       marginBottom: 16,
     },
     subtitle: {
       color: theme.colors.heading,
       fontSize: 15,
       textAlign: 'center',
-      marginBottom: 64
+      marginBottom: 32
     }
   }
 )

@@ -7,8 +7,10 @@ import {
   StatusBar
 } from "react-native";
 
+import { ButtonIcon } from "../../components/ButtonIcon";
 import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
+
 
 export default function SignIn() {
   const [text, setText] = useState('');
@@ -19,7 +21,6 @@ export default function SignIn() {
       barStyle="light-content"
       backgroundColor="transparent"
       translucent
-
       />
      <Image 
       source={IllustrationImg} 
@@ -38,6 +39,8 @@ export default function SignIn() {
       Crie grupos para jogar seus games {`\n`}
       favoritos com seus amigos
       </Text>
+
+      <ButtonIcon />
     </View>
     </View>
   );
