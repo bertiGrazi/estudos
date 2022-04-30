@@ -40,7 +40,10 @@ export default function SignIn() {
       favoritos com seus amigos
       </Text>
 
-      <ButtonIcon />
+      <ButtonIcon 
+        title="Entrar com Discord"
+        activeOpacity={0.5}
+      />
     </View>
     </View>
   );
