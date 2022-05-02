@@ -9,6 +9,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import SignIn from "./src/screens/SignIn";
 import { theme } from "./global/styles/theme";
+import { Background } from "./src/components/Background";
+
 
 export default function App() {
   const [fonstLoaded] = useFonts({
@@ -23,16 +25,13 @@ export default function App() {
   }
 
   return(
-    <LinearGradient
-      style={{flex: 1}}
-      colors={[theme.colors.secondary80, theme.colors.secondary100]}
-    >
-      < StatusBar
-        barStyle="light-content"
-        backgroundColor="transparent"
-        translucent
-      />
-        <SignIn />
-    </LinearGradient>
+    <Background>
+        < StatusBar
+          barStyle="light-content"
+          backgroundColor="transparent"
+          translucent
+        />
+          <SignIn />
+    </Background>
   );
 }
