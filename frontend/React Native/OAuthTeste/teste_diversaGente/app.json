@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "teste_diversaGente",
+    "slug": "teste_diversaGente",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
