@@ -8,6 +8,13 @@ import { SignInContent } from '../../components/SignInContent';
 
 import { styles } from './styles';
 
+type AuthResponse = {
+  type: string;
+  params: {
+    access_token: string;
+  }
+}
+
 export function SignIn() {
   const navigation = useNavigation();
 
@@ -19,10 +26,12 @@ export function SignIn() {
 
 
     const authUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`;
-    const responde = await AuthSession.startAsync({ authUrl })
-    console.log(responde)
-
-    navigation.navigate('Profile');
+    const {type, params} = await AuthSession
+    .startAsync({ authUrl }) as AuthResponse; 
+   
+    if (type === 'success') {
+      navigation.navigate('Profile', {token: params.access_token });
+    }
   }
 
   return (
