@@ -11,8 +11,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { theme } from "./global/styles/theme";
 import { Background } from "./src/components/Background";
 
-import SignIn from "./src/screens/SignIn";
-import { Home } from "./src/screens/Home";
+import { Routes } from "./src/routes";
 
 
 export default function App() {
@@ -34,8 +33,8 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-          {/* <SignIn /> */}
-          <Home />
+        
+          <Routes />
     </Background>
   );
 }
