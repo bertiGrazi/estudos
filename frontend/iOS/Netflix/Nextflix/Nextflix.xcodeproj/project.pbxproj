@@ -1,0 +1,604 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B1658536282BF167009815A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658535282BF167009815A2 /* AppDelegate.swift */; };
+		B1658538282BF167009815A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658537282BF167009815A2 /* SceneDelegate.swift */; };
+		B165853A282BF167009815A2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658539282BF167009815A2 /* MainTabBarViewController.swift */; };
+		B165853F282BF16A009815A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B165853E282BF16A009815A2 /* Assets.xcassets */; };
+		B1658542282BF16A009815A2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1658540282BF16A009815A2 /* LaunchScreen.storyboard */; };
+		B165854D282BF16A009815A2 /* NextflixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B165854C282BF16A009815A2 /* NextflixTests.swift */; };
+		B1658558282BF16A009815A2 /* NextflixUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658557282BF16A009815A2 /* NextflixUITests.swift */; };
+		B1658570282BF4D7009815A2 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B165856F282BF4D7009815A2 /* HomeViewController.swift */; };
+		B1658578282BF4F0009815A2 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658577282BF4F0009815A2 /* UpcomingViewController.swift */; };
+		B165857D282BF507009815A2 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B165857C282BF507009815A2 /* SearchViewController.swift */; };
+		B1658582282BF5FC009815A2 /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658581282BF5FC009815A2 /* DownloadViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B1658549282BF16A009815A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B165852A282BF166009815A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1658531282BF166009815A2;
+			remoteInfo = Nextflix;
+		};
+		B1658554282BF16A009815A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B165852A282BF166009815A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B1658531282BF166009815A2;
+			remoteInfo = Nextflix;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B1658532282BF166009815A2 /* Nextflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nextflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1658535282BF167009815A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B1658537282BF167009815A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		B1658539282BF167009815A2 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
+		B165853E282BF16A009815A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B1658541282BF16A009815A2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B1658543282BF16A009815A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1658548282BF16A009815A2 /* NextflixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextflixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B165854C282BF16A009815A2 /* NextflixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextflixTests.swift; sourceTree = "<group>"; };
+		B165854E282BF16A009815A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1658553282BF16A009815A2 /* NextflixUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NextflixUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1658557282BF16A009815A2 /* NextflixUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextflixUITests.swift; sourceTree = "<group>"; };
+		B1658559282BF16A009815A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B165856F282BF4D7009815A2 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B1658577282BF4F0009815A2 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		B165857C282BF507009815A2 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		B1658581282BF5FC009815A2 /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B165852F282BF166009815A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1658545282BF16A009815A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1658550282BF16A009815A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B1658529282BF166009815A2 = {
+			isa = PBXGroup;
+			children = (
+				B1658534282BF166009815A2 /* Nextflix */,
+				B165854B282BF16A009815A2 /* NextflixTests */,
+				B1658556282BF16A009815A2 /* NextflixUITests */,
+				B1658533282BF166009815A2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B1658533282BF166009815A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1658532282BF166009815A2 /* Nextflix.app */,
+				B1658548282BF16A009815A2 /* NextflixTests.xctest */,
+				B1658553282BF16A009815A2 /* NextflixUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1658534282BF166009815A2 /* Nextflix */ = {
+			isa = PBXGroup;
+			children = (
+				B165856E282BF4B8009815A2 /* Controllers */,
+				B1658535282BF167009815A2 /* AppDelegate.swift */,
+				B1658537282BF167009815A2 /* SceneDelegate.swift */,
+				B1658539282BF167009815A2 /* MainTabBarViewController.swift */,
+				B165853E282BF16A009815A2 /* Assets.xcassets */,
+				B1658540282BF16A009815A2 /* LaunchScreen.storyboard */,
+				B1658543282BF16A009815A2 /* Info.plist */,
+			);
+			path = Nextflix;
+			sourceTree = "<group>";
+		};
+		B165854B282BF16A009815A2 /* NextflixTests */ = {
+			isa = PBXGroup;
+			children = (
+				B165854C282BF16A009815A2 /* NextflixTests.swift */,
+				B165854E282BF16A009815A2 /* Info.plist */,
+			);
+			path = NextflixTests;
+			sourceTree = "<group>";
+		};
+		B1658556282BF16A009815A2 /* NextflixUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B1658557282BF16A009815A2 /* NextflixUITests.swift */,
+				B1658559282BF16A009815A2 /* Info.plist */,
+			);
+			path = NextflixUITests;
+			sourceTree = "<group>";
+		};
+		B165856E282BF4B8009815A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B165856F282BF4D7009815A2 /* HomeViewController.swift */,
+				B1658577282BF4F0009815A2 /* UpcomingViewController.swift */,
+				B165857C282BF507009815A2 /* SearchViewController.swift */,
+				B1658581282BF5FC009815A2 /* DownloadViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1658531282BF166009815A2 /* Nextflix */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B165855C282BF16A009815A2 /* Build configuration list for PBXNativeTarget "Nextflix" */;
+			buildPhases = (
+				B165852E282BF166009815A2 /* Sources */,
+				B165852F282BF166009815A2 /* Frameworks */,
+				B1658530282BF166009815A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nextflix;
+			productName = Nextflix;
+			productReference = B1658532282BF166009815A2 /* Nextflix.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B1658547282BF16A009815A2 /* NextflixTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B165855F282BF16A009815A2 /* Build configuration list for PBXNativeTarget "NextflixTests" */;
+			buildPhases = (
+				B1658544282BF16A009815A2 /* Sources */,
+				B1658545282BF16A009815A2 /* Frameworks */,
+				B1658546282BF16A009815A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B165854A282BF16A009815A2 /* PBXTargetDependency */,
+			);
+			name = NextflixTests;
+			productName = NextflixTests;
+			productReference = B1658548282BF16A009815A2 /* NextflixTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B1658552282BF16A009815A2 /* NextflixUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1658562282BF16A009815A2 /* Build configuration list for PBXNativeTarget "NextflixUITests" */;
+			buildPhases = (
+				B165854F282BF16A009815A2 /* Sources */,
+				B1658550282BF16A009815A2 /* Frameworks */,
+				B1658551282BF16A009815A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1658555282BF16A009815A2 /* PBXTargetDependency */,
+			);
+			name = NextflixUITests;
+			productName = NextflixUITests;
+			productReference = B1658553282BF16A009815A2 /* NextflixUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B165852A282BF166009815A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1210;
+				LastUpgradeCheck = 1210;
+				TargetAttributes = {
+					B1658531282BF166009815A2 = {
+						CreatedOnToolsVersion = 12.1;
+					};
+					B1658547282BF16A009815A2 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = B1658531282BF166009815A2;
+					};
+					B1658552282BF16A009815A2 = {
+						CreatedOnToolsVersion = 12.1;
+						TestTargetID = B1658531282BF166009815A2;
+					};
+				};
+			};
+			buildConfigurationList = B165852D282BF166009815A2 /* Build configuration list for PBXProject "Nextflix" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B1658529282BF166009815A2;
+			productRefGroup = B1658533282BF166009815A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1658531282BF166009815A2 /* Nextflix */,
+				B1658547282BF16A009815A2 /* NextflixTests */,
+				B1658552282BF16A009815A2 /* NextflixUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B1658530282BF166009815A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1658542282BF16A009815A2 /* LaunchScreen.storyboard in Resources */,
+				B165853F282BF16A009815A2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1658546282BF16A009815A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1658551282BF16A009815A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B165852E282BF166009815A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B165857D282BF507009815A2 /* SearchViewController.swift in Sources */,
+				B165853A282BF167009815A2 /* MainTabBarViewController.swift in Sources */,
+				B1658536282BF167009815A2 /* AppDelegate.swift in Sources */,
+				B1658582282BF5FC009815A2 /* DownloadViewController.swift in Sources */,
+				B1658538282BF167009815A2 /* SceneDelegate.swift in Sources */,
+				B1658578282BF4F0009815A2 /* UpcomingViewController.swift in Sources */,
+				B1658570282BF4D7009815A2 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1658544282BF16A009815A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B165854D282BF16A009815A2 /* NextflixTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B165854F282BF16A009815A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1658558282BF16A009815A2 /* NextflixUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B165854A282BF16A009815A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1658531282BF166009815A2 /* Nextflix */;
+			targetProxy = B1658549282BF16A009815A2 /* PBXContainerItemProxy */;
+		};
+		B1658555282BF16A009815A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B1658531282BF166009815A2 /* Nextflix */;
+			targetProxy = B1658554282BF16A009815A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B1658540282BF16A009815A2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B1658541282BF16A009815A2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B165855A282BF16A009815A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B165855B282BF16A009815A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B165855D282BF16A009815A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Nextflix/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "http--github.com-bertiGrazi.Nextflix";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B165855E282BF16A009815A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Nextflix/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "http--github.com-bertiGrazi.Nextflix";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B1658560282BF16A009815A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NextflixTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "http--github.com-bertiGrazi.NextflixTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nextflix.app/Nextflix";
+			};
+			name = Debug;
+		};
+		B1658561282BF16A009815A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NextflixTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "http--github.com-bertiGrazi.NextflixTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nextflix.app/Nextflix";
+			};
+			name = Release;
+		};
+		B1658563282BF16A009815A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NextflixUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "http--github.com-bertiGrazi.NextflixUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nextflix;
+			};
+			name = Debug;
+		};
+		B1658564282BF16A009815A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NextflixUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "http--github.com-bertiGrazi.NextflixUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Nextflix;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B165852D282BF166009815A2 /* Build configuration list for PBXProject "Nextflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B165855A282BF16A009815A2 /* Debug */,
+				B165855B282BF16A009815A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B165855C282BF16A009815A2 /* Build configuration list for PBXNativeTarget "Nextflix" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B165855D282BF16A009815A2 /* Debug */,
+				B165855E282BF16A009815A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B165855F282BF16A009815A2 /* Build configuration list for PBXNativeTarget "NextflixTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1658560282BF16A009815A2 /* Debug */,
+				B1658561282BF16A009815A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1658562282BF16A009815A2 /* Build configuration list for PBXNativeTarget "NextflixUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1658563282BF16A009815A2 /* Debug */,
+				B1658564282BF16A009815A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B165852A282BF166009815A2 /* Project object */;
+}

@@ -7,9 +7,11 @@ import { Rajdhani_500Medium, Rajdhani_700Bold} from "@expo-google-fonts/rajdhani
 import AppLoading from "expo-app-loading";
 import { LinearGradient } from 'expo-linear-gradient';
 
-import SignIn from "./src/screens/SignIn";
+
 import { theme } from "./global/styles/theme";
 import { Background } from "./src/components/Background";
+
+import { Routes } from "./src/routes";
 
 
 export default function App() {
@@ -31,7 +33,8 @@ export default function App() {
           backgroundColor="transparent"
           translucent
         />
-          <SignIn />
+        
+          <Routes />
     </Background>
   );
 }

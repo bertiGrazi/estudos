@@ -11,7 +11,7 @@ import IllustrationImg from '../../assets/illustration.png';
 import { styles } from './styles';
 
 
-export default function SignIn() {
+export function SignIn() {
   const [text, setText] = useState('');
 
   return(
