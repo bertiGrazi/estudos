@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B12464D8282BFD5C004301FD /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12464D7282BFD5C004301FD /* CollectionViewTableViewCell.swift */; };
 		B1658536282BF167009815A2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658535282BF167009815A2 /* AppDelegate.swift */; };
 		B1658538282BF167009815A2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658537282BF167009815A2 /* SceneDelegate.swift */; };
 		B165853A282BF167009815A2 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1658539282BF167009815A2 /* MainTabBarViewController.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B12464D7282BFD5C004301FD /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		B1658532282BF166009815A2 /* Nextflix.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nextflix.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1658535282BF167009815A2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1658537282BF167009815A2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B12464D2282BFC92004301FD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B12464D3282BFC9C004301FD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B12464D7282BFD5C004301FD /* CollectionViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B12464D4282BFCA7004301FD /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		B12464D5282BFD01004301FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B165853E282BF16A009815A2 /* Assets.xcassets */,
+				B1658540282BF16A009815A2 /* LaunchScreen.storyboard */,
+				B1658535282BF167009815A2 /* AppDelegate.swift */,
+				B1658537282BF167009815A2 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B12464D6282BFD09004301FD /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		B1658529282BF166009815A2 = {
 			isa = PBXGroup;
 			children = (
@@ -105,12 +147,12 @@
 		B1658534282BF166009815A2 /* Nextflix */ = {
 			isa = PBXGroup;
 			children = (
+				B12464D6282BFD09004301FD /* Managers */,
+				B12464D5282BFD01004301FD /* Resources */,
+				B12464D2282BFC92004301FD /* Models */,
+				B12464D3282BFC9C004301FD /* Views */,
+				B12464D4282BFCA7004301FD /* ViewModels */,
 				B165856E282BF4B8009815A2 /* Controllers */,
-				B1658535282BF167009815A2 /* AppDelegate.swift */,
-				B1658537282BF167009815A2 /* SceneDelegate.swift */,
-				B1658539282BF167009815A2 /* MainTabBarViewController.swift */,
-				B165853E282BF16A009815A2 /* Assets.xcassets */,
-				B1658540282BF16A009815A2 /* LaunchScreen.storyboard */,
 				B1658543282BF16A009815A2 /* Info.plist */,
 			);
 			path = Nextflix;
@@ -137,6 +179,7 @@
 		B165856E282BF4B8009815A2 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B1658539282BF167009815A2 /* MainTabBarViewController.swift */,
 				B165856F282BF4D7009815A2 /* HomeViewController.swift */,
 				B1658577282BF4F0009815A2 /* UpcomingViewController.swift */,
 				B165857C282BF507009815A2 /* SearchViewController.swift */,
@@ -276,6 +319,7 @@
 			files = (
 				B165857D282BF507009815A2 /* SearchViewController.swift in Sources */,
 				B165853A282BF167009815A2 /* MainTabBarViewController.swift in Sources */,
+				B12464D8282BFD5C004301FD /* CollectionViewTableViewCell.swift in Sources */,
 				B1658536282BF167009815A2 /* AppDelegate.swift in Sources */,
 				B1658582282BF5FC009815A2 /* DownloadViewController.swift in Sources */,
 				B1658538282BF167009815A2 /* SceneDelegate.swift in Sources */,
