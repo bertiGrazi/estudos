@@ -1,41 +1,53 @@
-import React from "react";
-import { RectButton, RectButtonProps } from "react-native-gesture-handler";
-import { LinearGradient } from "expo-linear-gradient";
-
-import { View, Text } from "react-native";
-import { SvgProps } from 'react-native-svg'
+import React from 'react';
+import { RectButton, RectButtonProps } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
+import { SvgProps } from 'react-native-svg';
+import { View, Text } from 'react-native';
 
 import { styles } from './styles';
-import { theme } from "../../../global/styles/theme";
-
+import { theme } from '../../../global/styles/theme';
 
 type Props = RectButtonProps & {
   title: string;
   icon: React.FC<SvgProps>;
+  hasCheckBox?: boolean;
   checked?: boolean;
 }
 
 export function Category({
-  title, 
-  icon: Icon, 
+  title,
+  icon: Icon,
   checked = false,
+  hasCheckBox = false,
   ...rest
-}: Props) {
-  return (
+}: Props){
+  const { secondary40, secondary50, secondary70 } = theme.colors;
+
+  return(
     <RectButton {...rest}>
       <LinearGradient
         style={styles.container}
-        colors={[theme.colors.secondary50, theme.colors.secondary70]}
+        colors={[secondary50, secondary70]}
       >
-        <View style={[styles.content, { opacity: checked ? 1 : 0.4 }]}>
-          <View style={checked ? styles.checked : styles.unchecked}
-          />
+        <LinearGradient 
+          style={[styles.content, { opacity: checked ? 1 : 0.5 }]}
+          colors={[ checked ? secondary70 : secondary50, secondary40 ]}
+        >
+          {
+            hasCheckBox &&
+            <View style={
+              checked ? styles.checked : styles.unchecked
+            }/>
+          }
           <Icon 
-           width={48} 
-           height={48}
+              width={48} 
+              height={48}
           />
-           <Text style={styles.title}/>
-        </View>
+
+          <Text style={styles.title}>
+            { title }
+          </Text>
+        </LinearGradient>
       </LinearGradient>
     </RectButton>
   );
