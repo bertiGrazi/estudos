@@ -5,15 +5,13 @@ export const styles = StyleSheet.create({
   container: {
     width: 53,
     height: 53,
-    borderRadius: 8,
+    borderRadius: 12,
     alignItems: "center",
     justifyContent: "center",
     marginRight: 22
   }, 
-
   avatar: {
     width: 48,
     height: 48
   }
-
 });

@@ -3,6 +3,7 @@ import { View, FlatList, Text } from "react-native";
 import { Appoiment } from "../../components/Appoiment";
 import { ButtonAdd } from "../../components/ButtonAdd";
 import { CategorySelect } from "../../components/CategorySelect";
+import { ListDivider } from "../../components/ListDivider";
 import { ListHeader } from "../../components/ListHeader";
 
 import { Profile } from "../../components/Profile";
@@ -37,6 +38,54 @@ export function Home() {
       date: '22/06 às 20:40h',
       description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
     },
+    {
+      id: '3',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+    },
+    {
+      id: '4',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+    },
+    {
+      id: '5',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+    },
+    {
+      id: '6',
+      guild: {
+        id: '1',
+        name: 'Lendários',
+        icon: null,
+        owner: true
+      },
+      category: '1',
+      date: '22/06 às 20:40h',
+      description: 'É hoje que vamos chegar ao challenger sem perder uma partida da md10'
+    },
   ]
 
   function handleCategorySelect(categoryId: string) {
@@ -48,6 +97,7 @@ export function Home() {
         <Profile />
         <ButtonAdd/>
       </View>
+
       <CategorySelect
         categorySelected={category}
         setCategory={handleCategorySelect}
@@ -62,8 +112,10 @@ export function Home() {
           renderItem={({item}) => (
             <Appoiment data={item}   />     
           )} 
+          ItemSeparatorComponent={() => <ListDivider/>}
            style={styles.matches}  
            showsHorizontalScrollIndicator={false}
+
         />
       </View>
     </View>
