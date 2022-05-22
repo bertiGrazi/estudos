@@ -1,10 +1,12 @@
 import React from "react";
 import { NativeBaseProvider, Box } from "native-base";
 
+import Routes from "./src/routes";
+
 export default function App() {
   return (
     <NativeBaseProvider>
-      <Box>Hello world</Box>
+      <Routes />
     </NativeBaseProvider>
   );
 }
