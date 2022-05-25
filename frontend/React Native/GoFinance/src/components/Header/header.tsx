@@ -2,7 +2,7 @@ import React from "react";
 import { Avatar, Text, Box } from "native-base";
 import { AntDesign } from '@expo/vector-icons'; 
 
-import { theme } from "../style/theme";
+import { theme } from "../../style/theme";
 
 type Props = {
   picture: string 

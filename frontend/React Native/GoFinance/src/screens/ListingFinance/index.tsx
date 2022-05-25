@@ -1,7 +1,10 @@
 import React from "react";
 import { NativeBaseProvider, Box, ScrollView, Text } from "native-base";
+
 import { theme } from "../../style/theme";
-import Header from "../../components/header";
+
+import Header from "../../components/Header/header";
+import List from "../../components/List/list";
 
 export default function ListingFinance() {
   return (
@@ -17,6 +20,15 @@ export default function ListingFinance() {
                   name={"Grazi"}/>
         </Box>
         </Box>
+        <ScrollView
+            horizontal={true} 
+            marginTop={-100}
+            showsHorizontalScrollIndicator={false}
+        >
+          <List />
+          <List />
+          <List />
+        </ScrollView>
       </ScrollView>
     </NativeBaseProvider>
   );
