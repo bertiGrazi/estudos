@@ -1,24 +1,23 @@
 import React from "react";
-import { NativeBaseProvider, Box, Heading } from "native-base";
+import { NativeBaseProvider, Box, ScrollView, Text } from "native-base";
+import { theme } from "../../style/theme";
+import Header from "../../components/header";
 
 export default function ListingFinance() {
   return (
     <NativeBaseProvider>
-      <Box
-        justifyContent={"center"}
-        alignItems={"center"}
-        flex={1}
-        backgroundColor={'#F0F2F5'}
-      >
-        <Heading
-          justifyContent={"center"}
-          alignItems={"center"}
-          bold
-          color={'#000000'}
+      <ScrollView backgroundColor={theme.colors.colorBackground}>
+        <Box
+          flex={1}
+          backgroundColor={theme.colors.purple}
+          height={250}
         >
-          Tela de Listagem
-        </Heading>
-      </Box>
+        <Box marginLeft={8} marginTop={12}>
+          <Header picture={"https://avatars.githubusercontent.com/u/70613625?v=4"} 
+                  name={"Grazi"}/>
+        </Box>
+        </Box>
+      </ScrollView>
     </NativeBaseProvider>
   );
 }
