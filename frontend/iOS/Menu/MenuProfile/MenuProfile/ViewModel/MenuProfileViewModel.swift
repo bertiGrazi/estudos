@@ -23,7 +23,9 @@ class MenuProfileViewModel {
                 print(sucess)
             }
         case .request:
-            break
+            self.service.getMenu { sucess, error in
+                print(error)
+            }
         }
         
     }
