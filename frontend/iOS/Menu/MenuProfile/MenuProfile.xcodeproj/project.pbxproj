@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6041A1EC99294C93E2689690 /* Pods_MenuProfile_MenuProfileUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5EBD3D255C2452A0C2B5BA6 /* Pods_MenuProfile_MenuProfileUITests.framework */; };
 		AB3C3DCC48C52FBF69FB406E /* Pods_MenuProfileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CDC9C947EAB8AFA95EE78D /* Pods_MenuProfileTests.framework */; };
+		B1563285291C5F1C00D95C84 /* MenuProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563284291C5F1C00D95C84 /* MenuProfileScreen.swift */; };
 		B18E36D7291BC6B8006D80C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */; };
 		B18E36D9291BC6B8006D80C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */; };
 		B18E36DB291BC6B8006D80C0 /* MenuProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36DA291BC6B8006D80C0 /* MenuProfileVC.swift */; };
@@ -50,6 +51,7 @@
 		78163136D3E9A83FBDDBC2A5 /* Pods-MenuProfileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuProfileTests.release.xcconfig"; path = "Target Support Files/Pods-MenuProfileTests/Pods-MenuProfileTests.release.xcconfig"; sourceTree = "<group>"; };
 		7A33A8D736F110628B20C725 /* Pods-MenuProfile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuProfile.release.xcconfig"; path = "Target Support Files/Pods-MenuProfile/Pods-MenuProfile.release.xcconfig"; sourceTree = "<group>"; };
 		AD489AAB5AB03C386F0203E4 /* Pods-MenuProfileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuProfileTests.debug.xcconfig"; path = "Target Support Files/Pods-MenuProfileTests/Pods-MenuProfileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B1563284291C5F1C00D95C84 /* MenuProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileScreen.swift; sourceTree = "<group>"; };
 		B18E36D3291BC6B8006D80C0 /* MenuProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +103,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B1563280291C5E5900D95C84 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B18E36DA291BC6B8006D80C0 /* MenuProfileVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B1563281291C5E6600D95C84 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */,
+				B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B1563283291C5EFD00D95C84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B1563284291C5F1C00D95C84 /* MenuProfileScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B18E36CA291BC6B8006D80C0 = {
 			isa = PBXGroup;
 			children = (
@@ -126,13 +153,13 @@
 		B18E36D5291BC6B8006D80C0 /* MenuProfile */ = {
 			isa = PBXGroup;
 			children = (
+				B1563283291C5EFD00D95C84 /* View */,
 				B18E3716291BEFA7006D80C0 /* Service */,
 				B18E3713291BCD6A006D80C0 /* ViewModel */,
 				B18E370E291BCBC6006D80C0 /* Modal */,
 				B18E3709291BC870006D80C0 /* Json */,
-				B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */,
-				B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */,
-				B18E36DA291BC6B8006D80C0 /* MenuProfileVC.swift */,
+				B1563281291C5E6600D95C84 /* Utils */,
+				B1563280291C5E5900D95C84 /* Controller */,
 				B18E36E2291BC6B9006D80C0 /* Assets.xcassets */,
 				B18E36E4291BC6B9006D80C0 /* LaunchScreen.storyboard */,
 				B18E36E7291BC6B9006D80C0 /* Info.plist */,
@@ -211,7 +238,6 @@
 				AD489AAB5AB03C386F0203E4 /* Pods-MenuProfileTests.debug.xcconfig */,
 				78163136D3E9A83FBDDBC2A5 /* Pods-MenuProfileTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -456,6 +482,7 @@
 			files = (
 				B18E3718291BEFBF006D80C0 /* MenuProfileService.swift in Sources */,
 				B18E36DB291BC6B8006D80C0 /* MenuProfileVC.swift in Sources */,
+				B1563285291C5F1C00D95C84 /* MenuProfileScreen.swift in Sources */,
 				B18E36D7291BC6B8006D80C0 /* AppDelegate.swift in Sources */,
 				B18E36E1291BC6B8006D80C0 /* MenuProfile.xcdatamodeld in Sources */,
 				B18E3715291BCD84006D80C0 /* MenuProfileViewModel.swift in Sources */,
