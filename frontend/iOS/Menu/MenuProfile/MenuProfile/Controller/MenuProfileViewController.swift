@@ -14,7 +14,6 @@ class MenuProfileViewController: UIViewController {
 
     override func loadView() {
         self.screen = MenuProfileScreen()
-        self.screen?.setupDelegateTableView(delegate: self, dataSource: self)
         self.view = self.screen
     }
     
@@ -32,7 +31,8 @@ class MenuProfileViewController: UIViewController {
 //MARK: - MenuProfileViewModelDelegate
 extension MenuProfileViewController: MenuProfileViewModelDelegate {
     func sucess() {
-        print("deu certo")
+        self.screen?.setupDelegateTableView(delegate: self, dataSource: self)
+        self.screen?.tableView.reloadData()
     }
     
     func error(_ message: String) {
@@ -43,7 +43,7 @@ extension MenuProfileViewController: MenuProfileViewModelDelegate {
 //MARK: - UITableViewDelegate, UITableViewDataSource
 extension MenuProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return self.viewModel.numberOfSection
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,9 +51,17 @@ extension MenuProfileViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        /// passa uma view para que ela seja a nossa section
-        /// poderia ser return nil poeque ele esperar um view opicional
-        return UIView()
+        let view = SectionView()
+        view.referencebutton.addTarget(self, action: #selector(self.tapSection(_:)), for: .touchUpInside)
+        view.referencebutton.tag = section
+        view.setupSection(description: self.viewModel.titleForSection(section: section))
+        view.expandButton(value: self.viewModel.constainsSection(section))
+        return view
+    }
+
+    @objc
+    func tapSection(_ sender: UIButton) {
+        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -40,7 +40,7 @@ class MenuProfileScreen: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect(), style: .grouped)
         tableView.backgroundColor = .white
-        tableView.separatorColor = .none
+        
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
