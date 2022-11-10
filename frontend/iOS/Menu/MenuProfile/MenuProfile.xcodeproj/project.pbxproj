@@ -12,7 +12,7 @@
 		B1563285291C5F1C00D95C84 /* MenuProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563284291C5F1C00D95C84 /* MenuProfileScreen.swift */; };
 		B18E36D7291BC6B8006D80C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */; };
 		B18E36D9291BC6B8006D80C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */; };
-		B18E36DB291BC6B8006D80C0 /* MenuProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36DA291BC6B8006D80C0 /* MenuProfileVC.swift */; };
+		B18E36DB291BC6B8006D80C0 /* MenuProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36DA291BC6B8006D80C0 /* MenuProfileViewController.swift */; };
 		B18E36E1291BC6B8006D80C0 /* MenuProfile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B18E36DF291BC6B8006D80C0 /* MenuProfile.xcdatamodeld */; };
 		B18E36E3291BC6B9006D80C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B18E36E2291BC6B9006D80C0 /* Assets.xcassets */; };
 		B18E36E6291BC6B9006D80C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B18E36E4291BC6B9006D80C0 /* LaunchScreen.storyboard */; };
@@ -55,7 +55,7 @@
 		B18E36D3291BC6B8006D80C0 /* MenuProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B18E36DA291BC6B8006D80C0 /* MenuProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileVC.swift; sourceTree = "<group>"; };
+		B18E36DA291BC6B8006D80C0 /* MenuProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileViewController.swift; sourceTree = "<group>"; };
 		B18E36E0291BC6B8006D80C0 /* MenuProfile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MenuProfile.xcdatamodel; sourceTree = "<group>"; };
 		B18E36E2291BC6B9006D80C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B18E36E5291BC6B9006D80C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		B1563280291C5E5900D95C84 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B18E36DA291BC6B8006D80C0 /* MenuProfileVC.swift */,
+				B18E36DA291BC6B8006D80C0 /* MenuProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -481,7 +481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B18E3718291BEFBF006D80C0 /* MenuProfileService.swift in Sources */,
-				B18E36DB291BC6B8006D80C0 /* MenuProfileVC.swift in Sources */,
+				B18E36DB291BC6B8006D80C0 /* MenuProfileViewController.swift in Sources */,
 				B1563285291C5F1C00D95C84 /* MenuProfileScreen.swift in Sources */,
 				B18E36D7291BC6B8006D80C0 /* AppDelegate.swift in Sources */,
 				B18E36E1291BC6B8006D80C0 /* MenuProfile.xcdatamodeld in Sources */,
