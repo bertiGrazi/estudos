@@ -26,6 +26,18 @@ class MenuProfileViewController: UIViewController {
         viewModel.delegate(delegate: self)
         viewModel.fetch(.request)
     }
+    
+    @objc
+    func tapSection(_ sender: UIButton) {
+        let section = sender.tag
+        if self.viewModel.constainsSection(section) {
+            self.viewModel.tappdeSection(type: .remove, section: section)
+            self.screen?.insertRowsTableView(indexPath: self.viewModel.indexPathForSection(section), section: section)
+        } else {
+            self.viewModel.tappdeSection(type: .insert, section: section)
+            self.screen?.deleteRowsTableView(indexPath: self.viewModel.indexPathForSection(section), section: section)
+        }
+    }
 }
 
 //MARK: - MenuProfileViewModelDelegate
@@ -47,7 +59,7 @@ extension MenuProfileViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel.numberOfRowsInSection(section: section)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -57,11 +69,6 @@ extension MenuProfileViewController: UITableViewDelegate, UITableViewDataSource 
         view.setupSection(description: self.viewModel.titleForSection(section: section))
         view.expandButton(value: self.viewModel.constainsSection(section))
         return view
-    }
-
-    @objc
-    func tapSection(_ sender: UIButton) {
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

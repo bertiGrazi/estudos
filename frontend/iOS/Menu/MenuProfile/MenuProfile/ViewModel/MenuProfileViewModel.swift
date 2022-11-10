@@ -12,6 +12,11 @@ enum TypeFetch {
     case request
 }
 
+enum TypeHiddenSection {
+    case remove
+    case insert
+}
+
 protocol MenuProfileViewModelDelegate: AnyObject {
     func sucess()
     func error(_ message: String)
@@ -34,7 +39,9 @@ class MenuProfileViewModel {
             self.service.getMenuFromJson { sucess, error in
                 if let sucess = sucess {
                     self.data = sucess.group ?? []
+                    self.hiddenAllSection()
                     self.delegate?.sucess()
+                   
                 } else {
                     self.delegate?.error(error?.localizedDescription ?? "")
                 }
@@ -43,7 +50,9 @@ class MenuProfileViewModel {
             self.service.getMenu { sucess, error in
                 if let sucess = sucess {
                     self.data = sucess.group ?? []
+                    self.hiddenAllSection()
                     self.delegate?.sucess()
+                   
                 } else {
                     self.delegate?.error(error?.localizedDescription ?? "")
                 }
@@ -61,5 +70,43 @@ class MenuProfileViewModel {
     
     public func constainsSection(_ section: Int) -> Bool {
         return self.hiddenSection.contains(section)
+    }
+    
+    public func tappdeSection(type: TypeHiddenSection, section: Int) {
+        if type == .insert {
+            self.hiddenSection.insert(section)
+        } else {
+            self.hiddenSection.remove(section)
+        }
+    }
+    
+    public func indexPathForSection(_ section: Int) -> [IndexPath] {
+        var indexPath = [IndexPath]()
+        let size = self.childCount(section)
+        for row in 0..<size {
+            indexPath.append(IndexPath(row: row, section: section))
+        }
+        
+        return indexPath
+    }
+    
+    private func childCount(_ section: Int) -> Int {
+        return self.data[section].child?.count ?? 0
+    }
+    
+    public func numberOfRowsInSection(section: Int) -> Int {
+        if self.constainsSection(section) {
+            return 0
+        } else {
+            return self.childCount(section)
+        }
+    }
+    
+    private func hiddenAllSection() {
+        //percorre todo mundo e insere no nosso index
+        let size = self.numberOfSection
+        for indexMenu in 0..<size {
+            self.hiddenSection.insert(indexMenu)
+        }
     }
 }
