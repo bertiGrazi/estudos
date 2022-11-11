@@ -109,4 +109,8 @@ class MenuProfileViewModel {
             self.hiddenSection.insert(indexMenu)
         }
     }
+    
+    public func titleForCell(indexPath: IndexPath) -> String {
+        return self.data[indexPath.section].child?[indexPath.row].title ?? ""
+    }
 }
