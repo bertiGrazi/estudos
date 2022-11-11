@@ -11,6 +11,8 @@
 		AB3C3DCC48C52FBF69FB406E /* Pods_MenuProfileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7CDC9C947EAB8AFA95EE78D /* Pods_MenuProfileTests.framework */; };
 		B1563285291C5F1C00D95C84 /* MenuProfileScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1563284291C5F1C00D95C84 /* MenuProfileScreen.swift */; };
 		B16269E9291D3D0A0042945F /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16269E8291D3D0A0042945F /* SectionView.swift */; };
+		B1851D89291E817E0070C0CB /* MenuProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1851D88291E817D0070C0CB /* MenuProfileTableViewCell.swift */; };
+		B1851D8C291E82150070C0CB /* MenuProfileTableViewCellScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1851D8B291E82150070C0CB /* MenuProfileTableViewCellScreen.swift */; };
 		B18E36D7291BC6B8006D80C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */; };
 		B18E36D9291BC6B8006D80C0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */; };
 		B18E36DB291BC6B8006D80C0 /* MenuProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B18E36DA291BC6B8006D80C0 /* MenuProfileViewController.swift */; };
@@ -54,6 +56,8 @@
 		AD489AAB5AB03C386F0203E4 /* Pods-MenuProfileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MenuProfileTests.debug.xcconfig"; path = "Target Support Files/Pods-MenuProfileTests/Pods-MenuProfileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B1563284291C5F1C00D95C84 /* MenuProfileScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileScreen.swift; sourceTree = "<group>"; };
 		B16269E8291D3D0A0042945F /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
+		B1851D88291E817D0070C0CB /* MenuProfileTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileTableViewCell.swift; sourceTree = "<group>"; };
+		B1851D8B291E82150070C0CB /* MenuProfileTableViewCellScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProfileTableViewCellScreen.swift; sourceTree = "<group>"; };
 		B18E36D3291BC6B8006D80C0 /* MenuProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18E36D6291BC6B8006D80C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B18E36D8291BC6B8006D80C0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +142,23 @@
 			path = Section;
 			sourceTree = "<group>";
 		};
+		B1851D87291E81660070C0CB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B1851D8A291E81F50070C0CB /* Screen */,
+				B1851D88291E817D0070C0CB /* MenuProfileTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		B1851D8A291E81F50070C0CB /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B1851D8B291E82150070C0CB /* MenuProfileTableViewCellScreen.swift */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
 		B18E36CA291BC6B8006D80C0 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +184,7 @@
 		B18E36D5291BC6B8006D80C0 /* MenuProfile */ = {
 			isa = PBXGroup;
 			children = (
+				B1851D87291E81660070C0CB /* Cell */,
 				B16269E7291D3CF80042945F /* Section */,
 				B1563283291C5EFD00D95C84 /* View */,
 				B18E3716291BEFA7006D80C0 /* Service */,
@@ -494,10 +516,12 @@
 				B18E3718291BEFBF006D80C0 /* MenuProfileService.swift in Sources */,
 				B18E36DB291BC6B8006D80C0 /* MenuProfileViewController.swift in Sources */,
 				B16269E9291D3D0A0042945F /* SectionView.swift in Sources */,
+				B1851D89291E817E0070C0CB /* MenuProfileTableViewCell.swift in Sources */,
 				B1563285291C5F1C00D95C84 /* MenuProfileScreen.swift in Sources */,
 				B18E36D7291BC6B8006D80C0 /* AppDelegate.swift in Sources */,
 				B18E36E1291BC6B8006D80C0 /* MenuProfile.xcdatamodeld in Sources */,
 				B18E3715291BCD84006D80C0 /* MenuProfileViewModel.swift in Sources */,
+				B1851D8C291E82150070C0CB /* MenuProfileTableViewCellScreen.swift in Sources */,
 				B18E371A291BF0B0006D80C0 /* GerenicService.swift in Sources */,
 				B18E36D9291BC6B8006D80C0 /* SceneDelegate.swift in Sources */,
 				B18E3710291BCBD4006D80C0 /* MenuProfile.swift in Sources */,
