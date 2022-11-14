@@ -43,7 +43,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let section = sections[section]
-        
         if section.isOpened {
             return section.options.count + 1
         } else { return 1 }
@@ -71,6 +70,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } else {
             print("print sub cell")
         }
+
     }
     
 }
