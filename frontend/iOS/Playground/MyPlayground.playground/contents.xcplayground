@@ -3,6 +3,7 @@
     <pages>
         <page name='Capitalized_Uppercased'/>
         <page name='NilInDictionary'/>
-        <page name='Class_Struct'/>
+        <page name='Class_Static'/>
+        <page name='ListaEncadeada'/>
     </pages>
 </playground>
