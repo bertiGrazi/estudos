@@ -16,6 +16,9 @@
 		B1B3C45E292D1C3500F4ABC5 /* AppMusicBFTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B3C45D292D1C3500F4ABC5 /* AppMusicBFTests.swift */; };
 		B1B3C468292D1C3500F4ABC5 /* AppMusicBFUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B3C467292D1C3500F4ABC5 /* AppMusicBFUITests.swift */; };
 		B1B3C46A292D1C3500F4ABC5 /* AppMusicBFUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B3C469292D1C3500F4ABC5 /* AppMusicBFUITestsLaunchTests.swift */; };
+		B1B3C479292D1D7800F4ABC5 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B3C478292D1D7800F4ABC5 /* NSAttributedString + Extension.swift */; };
+		B1B3C47B292D1DA100F4ABC5 /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B3C47A292D1DA100F4ABC5 /* NSTextAttachment + Extension.swift */; };
+		B1B3C47D292D1DC000F4ABC5 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B3C47C292D1DC000F4ABC5 /* UIView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		B1B3C463292D1C3500F4ABC5 /* AppMusicBFUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppMusicBFUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1B3C467292D1C3500F4ABC5 /* AppMusicBFUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMusicBFUITests.swift; sourceTree = "<group>"; };
 		B1B3C469292D1C3500F4ABC5 /* AppMusicBFUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMusicBFUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B1B3C478292D1D7800F4ABC5 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
+		B1B3C47A292D1DA100F4ABC5 /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
+		B1B3C47C292D1DC000F4ABC5 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		B1B3C442292D1C3500F4ABC5 /* AppMusicBF */ = {
 			isa = PBXGroup;
 			children = (
+				B1B3C477292D1D6E00F4ABC5 /* Extension */,
 				B1B3C476292D1C5D00F4ABC5 /* Resources */,
 				B1B3C447292D1C3500F4ABC5 /* HomeViewController.swift */,
 				B1B3C454292D1C3500F4ABC5 /* Info.plist */,
@@ -133,6 +140,16 @@
 				B1B3C445292D1C3500F4ABC5 /* SceneDelegate.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		B1B3C477292D1D6E00F4ABC5 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				B1B3C478292D1D7800F4ABC5 /* NSAttributedString + Extension.swift */,
+				B1B3C47A292D1DA100F4ABC5 /* NSTextAttachment + Extension.swift */,
+				B1B3C47C292D1DC000F4ABC5 /* UIView + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,7 +284,10 @@
 			files = (
 				B1B3C448292D1C3500F4ABC5 /* HomeViewController.swift in Sources */,
 				B1B3C44E292D1C3500F4ABC5 /* AppMusicBF.xcdatamodeld in Sources */,
+				B1B3C47B292D1DA100F4ABC5 /* NSTextAttachment + Extension.swift in Sources */,
 				B1B3C444292D1C3500F4ABC5 /* AppDelegate.swift in Sources */,
+				B1B3C47D292D1DC000F4ABC5 /* UIView + Extension.swift in Sources */,
+				B1B3C479292D1D7800F4ABC5 /* NSAttributedString + Extension.swift in Sources */,
 				B1B3C446292D1C3500F4ABC5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
