@@ -20,6 +20,7 @@
 		B11813C12926D0E40023EC40 /* NSAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11813C02926D0E40023EC40 /* NSAttributedString + Extension.swift */; };
 		B11813C32926D1090023EC40 /* NSTextAttachment + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11813C22926D1090023EC40 /* NSTextAttachment + Extension.swift */; };
 		B11813C52926D13F0023EC40 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11813C42926D13F0023EC40 /* UIView + Extension.swift */; };
+		B16DD67F292D1780006F9CE0 /* HomeViewControllerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16DD67E292D1780006F9CE0 /* HomeViewControllerScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		B11813C02926D0E40023EC40 /* NSAttributedString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString + Extension.swift"; sourceTree = "<group>"; };
 		B11813C22926D1090023EC40 /* NSTextAttachment + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSTextAttachment + Extension.swift"; sourceTree = "<group>"; };
 		B11813C42926D13F0023EC40 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		B16DD67E292D1780006F9CE0 /* HomeViewControllerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,7 @@
 				B11813BC2926D0890023EC40 /* Model */,
 				B11813892926CCCC0023EC40 /* AppDelegate.swift */,
 				B118138B2926CCCC0023EC40 /* SceneDelegate.swift */,
-				B118138D2926CCCC0023EC40 /* HomeViewController.swift */,
+				B16DD67D292D175B006F9CE0 /* Home */,
 				B11813952926CCCE0023EC40 /* Assets.xcassets */,
 				B11813972926CCCE0023EC40 /* LaunchScreen.storyboard */,
 				B118139A2926CCCE0023EC40 /* Info.plist */,
@@ -153,6 +155,23 @@
 				B11813C42926D13F0023EC40 /* UIView + Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B16DD67D292D175B006F9CE0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B118138D2926CCCC0023EC40 /* HomeViewController.swift */,
+				B16DD680292D17BF006F9CE0 /* Screen */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B16DD680292D17BF006F9CE0 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				B16DD67E292D1780006F9CE0 /* HomeViewControllerScreen.swift */,
+			);
+			path = Screen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +307,7 @@
 				B118138E2926CCCC0023EC40 /* HomeViewController.swift in Sources */,
 				B11813942926CCCC0023EC40 /* AppMusicBF.xcdatamodeld in Sources */,
 				B11813C32926D1090023EC40 /* NSTextAttachment + Extension.swift in Sources */,
+				B16DD67F292D1780006F9CE0 /* HomeViewControllerScreen.swift in Sources */,
 				B118138A2926CCCC0023EC40 /* AppDelegate.swift in Sources */,
 				B11813C52926D13F0023EC40 /* UIView + Extension.swift in Sources */,
 				B118138C2926CCCC0023EC40 /* SceneDelegate.swift in Sources */,
