@@ -11,14 +11,28 @@ class HomeViewController: UIViewController {
     var screen: HomeViewControllerScreen?
     
     override func loadView() {
-        /// gerando a minha instäncia
         self.screen = HomeViewControllerScreen()
-        /// toda vizualização da nossa HomeviewController é a nossa Screen
+        self.screen?.configTableViewProtocols(delegate: self, dataSource: self)
         self.view = self.screen
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+}
+
+//MARK: - UITableViewDelegate, UITableViewDataSource
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return CardData.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 500
     }
 }
