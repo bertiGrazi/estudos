@@ -19,7 +19,7 @@ class CustomCardView: UIView {
     var containerTopConstraints: NSLayoutConstraint?
     var containerTraillingConstraints: NSLayoutConstraint?
     var containerBottomConstraints: NSLayoutConstraint?
-    var dataModel: CardViewModel?
+    var dataViewModel: CardViewModel?
     
     //MARK: - View
     
@@ -54,7 +54,7 @@ class CustomCardView: UIView {
         return view
     }()
     
-    // border image user
+    /// border image user
     lazy var profileBorderView: UIView = {
         let view = UIView()
         view.backgroundColor = .clear
@@ -65,7 +65,7 @@ class CustomCardView: UIView {
         return view
     }()
     
-    // user image
+    /// user image
     lazy var cardProfileImage: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .black
@@ -76,7 +76,7 @@ class CustomCardView: UIView {
         return image
     }()
     
-    //add image user button
+    /// add image user button
     lazy var addProfileImageButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .white
@@ -85,4 +85,94 @@ class CustomCardView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
+    
+    /// music category
+    lazy var cardCategoryTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 12, weight: .bold)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    /// date category
+    lazy var cardCateoryDateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 11, weight: .regular)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    /// title
+    lazy var cardTitle: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 31, weight: .bold)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    /// likes and time
+    lazy var likeAndTitleLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    /// description in case for fullMode
+    lazy var descriptionTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        label.textColor = .white
+        label.textAlignment = .center
+        /// texto se reagusta independente de quantas linhas tiver.
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    init(statusCard: ViewMode, dataViewModel: CardViewModel) {
+        let frame = CGRect.zero
+        self.statusCard = statusCard
+        self.dataViewModel = dataViewModel
+        super.init(frame: frame)
+        self.addSubviews()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func addSubviews() {
+        self.addSubview(self.cardContainerView)
+        self.cardContainerView.addSubview(cardImage)
+        self.cardContainerView.addSubview(overlayView)
+        self.cardContainerView.addSubview(profileBorderView)
+        self.cardContainerView.addSubview(cardProfileImage)
+        self.cardContainerView.addSubview(cardCategoryTitleLabel)
+        self.cardContainerView.addSubview(cardCateoryDateLabel)
+        self.cardContainerView.addSubview(cardTitle)
+        self.cardContainerView.addSubview(likeAndTitleLabel)
+        self.cardContainerView.addSubview(descriptionTitleLabel)
+        
+        self.updateLayout(for: self.statusCard ?? .cardMode)
+    }
+    
+    private func updateLayout(for mode: ViewMode) {
+        if mode == .fullMode {
+            self.containerLeadingConstraints?.constant = 0
+            self.containerTopConstraints?.constant = 0
+            self.containerTraillingConstraints?.constant = 0
+            self.containerBottomConstraints?.constant = 0
+            self.descriptionTitleLabel.isHidden = false
+        } else {
+            self.containerLeadingConstraints?.constant = 30
+            self.containerTopConstraints?.constant = 15
+            self.containerTraillingConstraints?.constant = -15
+            self.containerBottomConstraints?.constant = -30
+            self.descriptionTitleLabel.isHidden = true
+        }
+    }
 }
