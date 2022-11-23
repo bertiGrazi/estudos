@@ -139,6 +139,7 @@ class CustomCardView: UIView {
         self.dataViewModel = dataViewModel
         super.init(frame: frame)
         self.addSubviews()
+        self.setupConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -158,6 +159,52 @@ class CustomCardView: UIView {
         self.cardContainerView.addSubview(descriptionTitleLabel)
         
         self.updateLayout(for: self.statusCard ?? .cardMode)
+    }
+    
+    private func setupConstraints() {
+        self.containerLeadingConstraints = cardContainerView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 30)
+        /// quando não estamos trabalhando de uma forma nativa sem está dentro da lista do NSLayout.active
+        self.containerLeadingConstraints?.isActive = true
+        
+        self.containerLeadingConstraints = cardContainerView.topAnchor.constraint(equalTo: self.topAnchor, constant: 15)
+        self.containerLeadingConstraints?.isActive = true
+        
+        self.containerBottomConstraints = cardContainerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 15)
+        self.containerBottomConstraints?.isActive = true
+        
+        self.containerTraillingConstraints = cardContainerView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -30)
+        self.containerTraillingConstraints?.isActive = true
+        
+        self.overlayView.pin(to: self.cardContainerView)
+        self.cardImage.pin(to: self.cardContainerView)
+        
+        NSLayoutConstraint.activate([
+            self.profileBorderView.topAnchor.constraint(equalTo: self.cardContainerView.topAnchor, constant: 60),
+            self.profileBorderView.centerXAnchor.constraint(equalTo: self.cardContainerView.centerXAnchor, constant: 0),
+            self.profileBorderView.widthAnchor.constraint(equalToConstant: 50),
+            self.profileBorderView.heightAnchor.constraint(equalToConstant: 50),
+            
+            self.addProfileImageButton.trailingAnchor.constraint(equalTo: self.profileBorderView.trailingAnchor, constant: 4),
+            self.addProfileImageButton.bottomAnchor.constraint(equalTo: self.profileBorderView.bottomAnchor, constant: 4),
+            self.addProfileImageButton.widthAnchor.constraint(equalToConstant: 20),
+            self.addProfileImageButton.heightAnchor.constraint(equalToConstant: 20),
+            
+            self.cardProfileImage.centerXAnchor.constraint(equalTo: self.profileBorderView.centerXAnchor, constant: 0),
+            self.cardProfileImage.centerYAnchor.constraint(equalTo: self.profileBorderView.centerYAnchor, constant: 0),
+            self.cardProfileImage.widthAnchor.constraint(equalToConstant: 40),
+            self.cardProfileImage.heightAnchor.constraint(equalToConstant: 40),
+            
+            self.cardCategoryTitleLabel.topAnchor.constraint(equalTo: self.profileBorderView.bottomAnchor, constant: 10),
+            self.cardCategoryTitleLabel.centerXAnchor.constraint(equalTo: self.cardContainerView.centerXAnchor, constant: 0),
+            
+            self.cardCateoryDateLabel.topAnchor.constraint(equalTo: self.cardCategoryTitleLabel.bottomAnchor, constant: 2),
+            self.cardCateoryDateLabel.centerXAnchor.constraint(equalTo: self.cardContainerView.centerXAnchor, constant: 0),
+            
+            self.cardTitle.topAnchor.constraint(equalTo: self.cardCateoryDateLabel.bottomAnchor, constant: 20),
+            self.cardTitle.leadingAnchor.constraint(equalTo: self.cardContainerView.leadingAnchor, constant: 20),
+            self.cardTitle.trailingAnchor.constraint(equalTo: self.cardContainerView.trailingAnchor, constant: -20),
+        ])
+
     }
     
     private func updateLayout(for mode: ViewMode) {
