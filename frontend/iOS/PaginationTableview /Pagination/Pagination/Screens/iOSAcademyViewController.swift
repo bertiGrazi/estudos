@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class iOSAcademyViewController: UIViewController {
     
     private let apiCaller = APICaller()
     
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
+extension iOSAcademyViewController: UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
