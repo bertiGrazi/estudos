@@ -18,6 +18,7 @@
 		B152B4042930DF6E007921C6 /* CoordinatorPatternUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152B4032930DF6E007921C6 /* CoordinatorPatternUITestsLaunchTests.swift */; };
 		B152B4112930DFB2007921C6 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152B4102930DFB2007921C6 /* Coordinator.swift */; };
 		B152B4132930DFCC007921C6 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152B4122930DFCC007921C6 /* MainCoordinator.swift */; };
+		B152B4152930E25D007921C6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B152B4142930E25D007921C6 /* SecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		B152B4032930DF6E007921C6 /* CoordinatorPatternUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorPatternUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B152B4102930DFB2007921C6 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B152B4122930DFCC007921C6 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B152B4142930E25D007921C6 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				B152B3E62930DF6D007921C6 /* CoordinatorPattern.xcdatamodeld */,
 				B152B4102930DFB2007921C6 /* Coordinator.swift */,
 				B152B4122930DFCC007921C6 /* MainCoordinator.swift */,
+				B152B4142930E25D007921C6 /* SecondViewController.swift */,
 			);
 			path = CoordinatorPattern;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				B152B4132930DFCC007921C6 /* MainCoordinator.swift in Sources */,
 				B152B3E82930DF6D007921C6 /* CoordinatorPattern.xcdatamodeld in Sources */,
 				B152B4112930DFB2007921C6 /* Coordinator.swift in Sources */,
+				B152B4152930E25D007921C6 /* SecondViewController.swift in Sources */,
 				B152B3DE2930DF6D007921C6 /* AppDelegate.swift in Sources */,
 				B152B3E02930DF6D007921C6 /* SceneDelegate.swift in Sources */,
 			);
