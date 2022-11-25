@@ -16,6 +16,8 @@ class MainCoordinator: Coordinator {
     }
     
     func start() {
-        print("Oi")
+        var viewController: UIViewController & Coordinating = ViewController()
+        viewController.coordinator = self
+        navigationController?.setViewControllers([viewController], animated: false)
     }
 }
