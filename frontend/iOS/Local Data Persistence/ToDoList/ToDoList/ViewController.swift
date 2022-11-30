@@ -42,8 +42,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //MARK: - TableView Delegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let selectCell = tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark
-        if selectCell {
+        let isCellSelect = tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark
+        if isCellSelect {
             tableView.cellForRow(at: indexPath)?.accessoryType = .none
         } else {
             tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
