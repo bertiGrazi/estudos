@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var itensArray = ["Casa", "Piscina", "Argentina"]
+    
+    let defaults = UserDefaults.standard
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -22,12 +24,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         view.addSubview(tableView)
         
-        title = "todoey"
+        title = "Todoey"
         
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.frame = view.bounds
+        
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itensArray = items
+        }
         
         setupNavigation()
     }
@@ -51,6 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
             //what will happen once the user clicks the Add Item button on our UIAlert
             self.itensArray.append(textField.text!)
+            self.defaults.set(self.itensArray, forKey: "TodoListArray")
             self.tableView.reloadData()
         }
         
