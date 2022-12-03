@@ -21,10 +21,46 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
+        
+        title = "todoey"
+        
         tableView.delegate = self
         tableView.dataSource = self
         
         tableView.frame = view.bounds
+        
+        setupNavigation()
+    }
+    
+    fileprivate func setupNavigation() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonPressed))
+    }
+    
+    @objc
+    func addButtonPressed() {
+        var textField = UITextField()
+        
+        let alert = UIAlertController(
+            title: "Add New Todoey Item",
+            message: "",
+            preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Item", style: .default) { action in
+            //what will happen once the user clicks the Add Item button on our UIAlert
+            self.itensArray.append(textField.text!)
+            self.tableView.reloadData()
+        }
+        
+        alert.addTextField { alertTextField in
+            alertTextField.placeholder = "Create new item"
+            textField = alertTextField
+        }
+        
+        alert.addAction(action)
+        present(alert, animated: true)
     }
     
     //MARK: - TableView DataSource Methods
@@ -50,4 +86,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
 }
-
