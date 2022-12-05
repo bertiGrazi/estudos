@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var itensArray = [Item]()
-    
+    let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -30,7 +31,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.frame = view.bounds
         
-        
         let newItem = Item()
         newItem.title = "Find Mike"
         newItem.done = true
@@ -47,6 +47,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let newItem4 = Item()
         newItem4.title = "Brasil"
         itensArray.append(newItem4)
+        
+//        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+//            itensArray = items
+//        }
         
         setupNavigation()
     }
@@ -72,7 +76,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let newItem = Item()
             newItem.title = textField.text!
             self.itensArray.append(newItem)
-            self.tableView.reloadData()
+
+            self.saveItems()
         }
         
         alert.addTextField { alertTextField in
@@ -80,8 +85,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             textField = alertTextField
         }
         
+        //self.defaults.set(self.itensArray, forKey: "TodoListArray")
         alert.addAction(action)
         present(alert, animated: true)
+    }
+    
+    //MARK: - Model Manupulation Methods
+    func saveItems() {
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(itensArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding item array, \(error)")
+        }
+        
+        self.tableView.reloadData()
     }
     
     //MARK: - TableView DataSource Methods
@@ -106,7 +126,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         itensArray[indexPath.row].done = !itensArray[indexPath.row].done
         
-        tableView.reloadData()
+        self.saveItems()
+        
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }
