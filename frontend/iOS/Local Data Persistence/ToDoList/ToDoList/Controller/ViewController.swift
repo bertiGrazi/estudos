@@ -10,9 +10,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var itensArray = ["Casa", "Piscina", "Argentina"]
+    var itensArray = [Item]()
     
-    let defaults = UserDefaults.standard
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -31,9 +30,23 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.frame = view.bounds
         
-        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
-            itensArray = items
-        }
+        
+        let newItem = Item()
+        newItem.title = "Find Mike"
+        newItem.done = true
+        itensArray.append(newItem)
+        
+        let newItem2 = Item()
+        newItem2.title = "Buy Eggs"
+        itensArray.append(newItem2)
+        
+        let newItem3 = Item()
+        newItem3.title = "Argentina"
+        itensArray.append(newItem3)
+        
+        let newItem4 = Item()
+        newItem4.title = "Brasil"
+        itensArray.append(newItem4)
         
         setupNavigation()
     }
@@ -55,9 +68,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add Item", style: .default) { action in
-            //what will happen once the user clicks the Add Item button on our UIAlert
-            self.itensArray.append(textField.text!)
-            self.defaults.set(self.itensArray, forKey: "TodoListArray")
+            
+            let newItem = Item()
+            newItem.title = textField.text!
+            self.itensArray.append(newItem)
             self.tableView.reloadData()
         }
         
@@ -77,19 +91,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = itensArray[indexPath.row]
-        cell.accessoryType = .none
+        
+        let item = itensArray[indexPath.row]
+        
+        cell.textLabel?.text = item.title
+        
+        cell.accessoryType = item.done == true ? .checkmark : .none
+        
         return cell
     }
     
     //MARK: - TableView Delegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        itensArray[indexPath.row].done = !itensArray[indexPath.row].done
+        
+        tableView.reloadData()
         tableView.deselectRow(at: indexPath, animated: false)
-        let isCellSelect = tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark
-        if isCellSelect {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        } else {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
     }
 }
