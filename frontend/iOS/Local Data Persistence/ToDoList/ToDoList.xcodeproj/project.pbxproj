@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B12F3A51293E08CB0030613D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12F3A50293E08CB0030613D /* Item.swift */; };
 		B1D686902937C49B00B16B12 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D6868F2937C49B00B16B12 /* AppDelegate.swift */; };
 		B1D686922937C49B00B16B12 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D686912937C49B00B16B12 /* SceneDelegate.swift */; };
 		B1D686942937C49B00B16B12 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D686932937C49B00B16B12 /* ViewController.swift */; };
@@ -37,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B12F3A50293E08CB0030613D /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		B1D6868C2937C49B00B16B12 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D6868F2937C49B00B16B12 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1D686912937C49B00B16B12 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,7 +79,7 @@
 		B12F3A52293E08D00030613D /* Data Modal */ = {
 			isa = PBXGroup;
 			children = (
-				B12F3A50293E08CB0030613D /* Item.swift */,
+				B1D686982937C49B00B16B12 /* ToDoList.xcdatamodeld */,
 			);
 			path = "Data Modal";
 			sourceTree = "<group>";
@@ -139,7 +137,6 @@
 				B12F3A53293E08DC0030613D /* Controller */,
 				B12F3A54293E08E20030613D /* Views */,
 				B1D686A02937C49C00B16B12 /* Info.plist */,
-				B1D686982937C49B00B16B12 /* ToDoList.xcdatamodeld */,
 				B12F3A52293E08D00030613D /* Data Modal */,
 			);
 			path = ToDoList;
@@ -292,7 +289,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B12F3A51293E08CB0030613D /* Item.swift in Sources */,
 				B1D686942937C49B00B16B12 /* ViewController.swift in Sources */,
 				B1D686902937C49B00B16B12 /* AppDelegate.swift in Sources */,
 				B1D686922937C49B00B16B12 /* SceneDelegate.swift in Sources */,
