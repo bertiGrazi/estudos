@@ -53,6 +53,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 //        }
         
         setupNavigation()
+        loadItems()
     }
     
     fileprivate func setupNavigation() {
@@ -102,6 +103,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         
         self.tableView.reloadData()
+    }
+    
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+                itensArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("\(error)")
+            }
+        }
     }
     
     //MARK: - TableView DataSource Methods
