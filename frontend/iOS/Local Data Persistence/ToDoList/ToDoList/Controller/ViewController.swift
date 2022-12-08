@@ -31,6 +31,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         
         tableView.frame = view.bounds
+        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
 
         setupNavigation()
         //loadItems()
