@@ -1,0 +1,32 @@
+/*geral*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace, sans-serif;
+  color: #323232;
+  border: none;
+}
+
+input, label {
+  display: block; /*cada um representa uma linha*/
+  width: 100%;
+}
+
+input:focus, label:focus {
+  outline: none;
+}
+
+a {
+  color: #E60084;
+}
+
+body {
+  padding-top: 5vh;
+  background-image: url('../img/bg-register-page.jpeg');
+  background-size: cover;
+  background-position-y: -150px;
+}
+
+/*form*/
