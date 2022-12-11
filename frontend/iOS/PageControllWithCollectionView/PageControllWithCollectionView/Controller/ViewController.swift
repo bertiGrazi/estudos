@@ -26,11 +26,24 @@ class ViewController: UIViewController {
         return collectionView
     }()
     
+    lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        return pageControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         self.view.addSubview(self.collectionView)
+        self.view.addSubview(pageControl)
         
+        self.pageControl.numberOfPages = viewModel.fetchNameUserList().count
+        self.pageControl.currentPage = 0
+        self.pageControl.tintColor = .red
+        self.pageControl.pageIndicatorTintColor = .black
+        self.pageControl.currentPageIndicatorTintColor = .green
         configConstraints()
     }
     
@@ -39,7 +52,10 @@ class ViewController: UIViewController {
             self.collectionView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20),
             self.collectionView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 20),
             self.collectionView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -20),
-            self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -400),
+            self.collectionView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -600),
+            
+            self.pageControl.topAnchor.constraint(equalTo: self.collectionView.bottomAnchor, constant: 20),
+            self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
         ])
     }
 }

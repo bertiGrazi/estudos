@@ -16,12 +16,6 @@ class NameUserBusinessModel: NameUserProtocol {
             NameUser(nameUser: "Grazielli"),
             NameUser(nameUser: "Jeronima"),
             NameUser(nameUser: "Cicera"),
-            NameUser(nameUser: "Grazielli"),
-            NameUser(nameUser: "Jeronima"),
-            NameUser(nameUser: "Cicera"),
-            NameUser(nameUser: "Grazielli"),
-            NameUser(nameUser: "Jeronima"),
-            NameUser(nameUser: "Cicera"),
        ]
     }
 }
