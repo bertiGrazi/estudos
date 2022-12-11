@@ -17,7 +17,7 @@ class ViewController: UIViewController {
             let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
             layout.scrollDirection = .horizontal
             layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-            layout.itemSize = CGSize(width: view.frame.width, height: 100)
+        layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
     
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.delegate = self
@@ -40,7 +40,6 @@ class ViewController: UIViewController {
         self.view.addSubview(pageControl)
         
         self.pageControl.numberOfPages = viewModel.fetchNameUserList().count
-        self.pageControl.currentPage = 0
         self.pageControl.tintColor = .red
         self.pageControl.pageIndicatorTintColor = .black
         self.pageControl.currentPageIndicatorTintColor = .green
@@ -64,6 +63,27 @@ class ViewController: UIViewController {
     @objc
     func tappedPageControll(_ sender: UIPageControl) {
         self.collectionView.scrollToItem(at: IndexPath(row: sender.currentPage, section: 0), at: .centeredHorizontally, animated: true)
+    }
+    
+    
+    /// Método disparado toda vez que acontece o scrollView
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        /// visibleRect = para que a gente consiga trabalhar o estado que ele está (contentOffset)  e ainda pegando o tamanho da nossa collection
+//        let visibleRect = CGRect(origin: self.collectionView.contentOffset, size: self.collectionView.bounds.size)
+//
+//        /// Agora que temos o tamanho vamos trabalhar com a posição que temos
+//        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.maxY)
+//
+//        /// Agora conseguimos pegar a propriedade indexPathForItem onde passamos uma determinada posição para saber quem é nossa célula
+//        let visibleIndexPath = self.collectionView.indexPathForItem(at: visiblePoint)
+//
+//        /// Setando
+//        self.pageControl.currentPage = visibleIndexPath?.row ?? 0
+        let visibleRect = CGRect(origin: self.collectionView.contentOffset, size: self.collectionView.bounds.size)
+        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+        if let visibleIndexPath = self.collectionView.indexPathForItem(at: visiblePoint) {
+        self.pageControl.currentPage = visibleIndexPath.row
+        }
     }
 }
 

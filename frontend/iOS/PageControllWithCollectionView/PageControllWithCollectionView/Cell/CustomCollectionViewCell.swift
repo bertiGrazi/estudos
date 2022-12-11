@@ -48,8 +48,6 @@ class CustomCollectionViewCell: UICollectionViewCell {
             self.viewTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             self.viewTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             self.viewTitle.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -20),
-            self.viewTitle.widthAnchor.constraint(equalToConstant: 50),
-            self.viewTitle.heightAnchor.constraint(equalToConstant: 100),
             
             self.title.centerXAnchor.constraint(equalTo: viewTitle.centerXAnchor, constant: 0),
             self.title.centerYAnchor.constraint(equalTo: viewTitle.centerYAnchor, constant: 0),
