@@ -44,6 +44,8 @@ class ViewController: UIViewController {
         self.pageControl.tintColor = .red
         self.pageControl.pageIndicatorTintColor = .black
         self.pageControl.currentPageIndicatorTintColor = .green
+        self.pageControl.addTarget(self, action: #selector(tappedPageControll), for: .allEvents)
+        
         configConstraints()
     }
     
@@ -58,9 +60,14 @@ class ViewController: UIViewController {
             self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
         ])
     }
+    
+    @objc
+    func tappedPageControll(_ sender: UIPageControl) {
+        self.collectionView.scrollToItem(at: IndexPath(row: sender.currentPage, section: 0), at: .centeredHorizontally, animated: true)
+    }
 }
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.fetchNameUserList().count
     }
@@ -70,8 +77,4 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         cell.configCell(data: viewModel.fetchNameUserList()[indexPath.row])
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 100, height: 200)
-//    }
 }
