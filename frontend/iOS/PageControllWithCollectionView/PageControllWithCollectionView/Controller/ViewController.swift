@@ -15,11 +15,11 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
         collectionView.backgroundColor = .orange
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
-            let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-            layout.scrollDirection = .horizontal
-            layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
+        layout.scrollDirection = .horizontal
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         layout.itemSize = CGSize(width: UIScreen.main.bounds.width, height: 100)
-    
+        
         collectionView.setCollectionViewLayout(layout, animated: true)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -29,12 +29,15 @@ class ViewController: UIViewController {
     
     lazy var pageControl: UIPageControl = {
         let pageControl = UIPageControl()
-        
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         return pageControl
     }()
     
-    let animationView = AnimationView()
+    let animationView: AnimationView = {
+        let animayionView = AnimationView()
+        animayionView.translatesAutoresizingMaskIntoConstraints = false
+        return animayionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,17 +69,41 @@ class ViewController: UIViewController {
             self.animationView.topAnchor.constraint(equalTo: self.pageControl.bottomAnchor, constant: 20),
             self.animationView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 00),
             self.animationView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
-            self.animationView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20)
+            self.animationView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
+            self.animationView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            self.animationView.heightAnchor.constraint(equalToConstant: 300)
         ])
     }
-    
+
     fileprivate func setupAnimation() {
         let animation = Animation.named("airplane_one")
+        animationView.animation = animation
         animationView.frame = self.view.bounds
         animationView.contentMode = .scaleAspectFit
-        animationView.animation = animation
-        animationView.loopMode = .loop
-        animationView.play()
+        animationView.loopMode = .playOnce
+        animationView.play(
+            fromProgress: 0,
+            toProgress: 1,
+            loopMode: LottieLoopMode.playOnce) { finishedFirtsAnimation in
+                if finishedFirtsAnimation {
+                    let animationTwo = Animation.named("airplane_two")
+                    self.animationView.animation = animationTwo
+                    self.animationView.loopMode = .playOnce
+                    self.animationView.play(
+                        fromProgress: 0,
+                        toProgress: 1,
+                        loopMode: LottieLoopMode.playOnce) { finishedSecondAnimation in
+                            if finishedSecondAnimation {
+                                let animationThree = Animation.named("airplane_three")
+                                self.animationView.animation = animationThree
+                                self.animationView.loopMode = .playOnce
+                                self.animationView.play { finished in
+                                    self.animationView.stop()
+                                }
+                            }
+                        }
+                }
+            }
     }
     
     @objc
@@ -86,21 +113,21 @@ class ViewController: UIViewController {
     
     /// Método disparado toda vez que acontece o scrollView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        /// visibleRect = para que a gente consiga trabalhar o estado que ele está (contentOffset)  e ainda pegando o tamanho da nossa collection
-//        let visibleRect = CGRect(origin: self.collectionView.contentOffset, size: self.collectionView.bounds.size)
-//
-//        /// Agora que temos o tamanho vamos trabalhar com a posição que temos
-//        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.maxY)
-//
-//        /// Agora conseguimos pegar a propriedade indexPathForItem onde passamos uma determinada posição para saber quem é nossa célula
-//        let visibleIndexPath = self.collectionView.indexPathForItem(at: visiblePoint)
-//
-//        /// Setando
-//        self.pageControl.currentPage = visibleIndexPath?.row ?? 0
+        //        /// visibleRect = para que a gente consiga trabalhar o estado que ele está (contentOffset)  e ainda pegando o tamanho da nossa collection
+        //        let visibleRect = CGRect(origin: self.collectionView.contentOffset, size: self.collectionView.bounds.size)
+        //
+        //        /// Agora que temos o tamanho vamos trabalhar com a posição que temos
+        //        let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.maxY)
+        //
+        //        /// Agora conseguimos pegar a propriedade indexPathForItem onde passamos uma determinada posição para saber quem é nossa célula
+        //        let visibleIndexPath = self.collectionView.indexPathForItem(at: visiblePoint)
+        //
+        //        /// Setando
+        //        self.pageControl.currentPage = visibleIndexPath?.row ?? 0
         let visibleRect = CGRect(origin: self.collectionView.contentOffset, size: self.collectionView.bounds.size)
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         if let visibleIndexPath = self.collectionView.indexPathForItem(at: visiblePoint) {
-        self.pageControl.currentPage = visibleIndexPath.row
+            self.pageControl.currentPage = visibleIndexPath.row
         }
     }
 }
