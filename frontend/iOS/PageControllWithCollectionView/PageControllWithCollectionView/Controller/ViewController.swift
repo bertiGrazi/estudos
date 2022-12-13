@@ -11,13 +11,6 @@ class ViewController: UIViewController {
     
     let viewModel = NameUserViewModel()
     
-    lazy var viewAnimation: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
         collectionView.backgroundColor = .orange
@@ -41,12 +34,14 @@ class ViewController: UIViewController {
         return pageControl
     }()
     
+    let animationView = AnimationView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         self.view.addSubview(self.collectionView)
         self.view.addSubview(pageControl)
-        self.view.addSubview(viewAnimation)
+        self.view.addSubview(animationView)
         
         self.pageControl.numberOfPages = viewModel.fetchNameUserList().count
         self.pageControl.tintColor = .red
@@ -55,6 +50,7 @@ class ViewController: UIViewController {
         self.pageControl.addTarget(self, action: #selector(tappedPageControll), for: .allEvents)
         
         configConstraints()
+        setupAnimation()
     }
     
     private func configConstraints() {
@@ -67,20 +63,26 @@ class ViewController: UIViewController {
             self.pageControl.topAnchor.constraint(equalTo: self.collectionView.bottomAnchor, constant: 20),
             self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
             
-            self.viewAnimation.topAnchor.constraint(equalTo: self.pageControl.bottomAnchor, constant: 20),
-            self.viewAnimation.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 00),
-            self.viewAnimation.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
-            self.viewAnimation.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
-            self.viewAnimation.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
-            self.viewAnimation.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height)
+            self.animationView.topAnchor.constraint(equalTo: self.pageControl.bottomAnchor, constant: 20),
+            self.animationView.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 00),
+            self.animationView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+            self.animationView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20)
         ])
+    }
+    
+    fileprivate func setupAnimation() {
+        let animation = Animation.named("airplane_one")
+        animationView.frame = self.view.bounds
+        animationView.contentMode = .scaleAspectFit
+        animationView.animation = animation
+        animationView.loopMode = .loop
+        animationView.play()
     }
     
     @objc
     func tappedPageControll(_ sender: UIPageControl) {
         self.collectionView.scrollToItem(at: IndexPath(row: sender.currentPage, section: 0), at: .centeredHorizontally, animated: true)
     }
-    
     
     /// Método disparado toda vez que acontece o scrollView
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
