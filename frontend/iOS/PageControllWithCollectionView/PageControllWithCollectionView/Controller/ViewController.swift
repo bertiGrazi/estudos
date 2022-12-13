@@ -5,10 +5,18 @@
 //  Created by Grazi  Berti on 09/12/22.
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
     
     let viewModel = NameUserViewModel()
+    
+    lazy var viewAnimation: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewLayout.init())
@@ -38,6 +46,7 @@ class ViewController: UIViewController {
         view.backgroundColor = .red
         self.view.addSubview(self.collectionView)
         self.view.addSubview(pageControl)
+        self.view.addSubview(viewAnimation)
         
         self.pageControl.numberOfPages = viewModel.fetchNameUserList().count
         self.pageControl.tintColor = .red
@@ -57,6 +66,13 @@ class ViewController: UIViewController {
             
             self.pageControl.topAnchor.constraint(equalTo: self.collectionView.bottomAnchor, constant: 20),
             self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0),
+            
+            self.viewAnimation.topAnchor.constraint(equalTo: self.pageControl.bottomAnchor, constant: 20),
+            self.viewAnimation.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 00),
+            self.viewAnimation.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: 0),
+            self.viewAnimation.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -20),
+            self.viewAnimation.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            self.viewAnimation.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height)
         ])
     }
     
