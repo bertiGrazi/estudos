@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         self.pageControl.addTarget(self, action: #selector(tappedPageControll), for: .allEvents)
         
         configConstraints()
-        setupAnimation()
+        startAnimation()
     }
     
     private func configConstraints() {
@@ -75,12 +75,12 @@ class ViewController: UIViewController {
         ])
     }
 
-    fileprivate func setupAnimation() {
+    fileprivate func startAnimation() {
         let animation = Animation.named("airplane_one")
         animationView.animation = animation
         animationView.frame = self.view.bounds
         animationView.contentMode = .scaleAspectFit
-        animationView.loopMode = .playOnce
+        animationView.loopMode = .loop
         animationView.play(
             fromProgress: 0,
             toProgress: 1,
@@ -88,7 +88,7 @@ class ViewController: UIViewController {
                 if finishedFirtsAnimation {
                     let animationTwo = Animation.named("airplane_two")
                     self.animationView.animation = animationTwo
-                    self.animationView.loopMode = .playOnce
+                    self.animationView.loopMode = .loop
                     self.animationView.play(
                         fromProgress: 0,
                         toProgress: 1,
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
                                 self.animationView.animation = animationThree
                                 self.animationView.loopMode = .playOnce
                                 self.animationView.play { finished in
-                                    self.animationView.stop()
+                                    self.startAnimation()
                                 }
                             }
                         }
