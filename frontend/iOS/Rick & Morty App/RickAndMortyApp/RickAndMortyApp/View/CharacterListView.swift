@@ -42,6 +42,7 @@ final class CharacterListView: UIView {
         setupCollectionView()
         
         spinner.startAnimating()
+        viewModel.delegate = self
         viewModel.fetchCharacters()
     }
     
@@ -70,15 +71,17 @@ final class CharacterListView: UIView {
     private func setupCollectionView() {
         collectionView.dataSource = viewModel
         collectionView.delegate = viewModel
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2) {
-            self.spinner.stopAnimating()
-            
-            self.collectionView.isHidden = false
-            
-            UIView.animate(withDuration: 0.4) {
-                self.collectionView.alpha = 1
-            }
+    }
+}
+
+extension CharacterListView: RMCharacterListViewModelDelegate {
+    func didLoadInitialCharacter() {
+        // The collectionView never going to present later the view
+        spinner.stopAnimating()
+        collectionView.isHidden = false
+        collectionView.reloadData() /// Inicial fetch
+        UIView.animate(withDuration: 1.0) {
+            self.collectionView.alpha = 1
         }
     }
 }
