@@ -19,7 +19,7 @@ struct RMCharacter: Codable {
     /// location    object    Name and link to the character's last known location endpoint.
     let location: RMSingleLocation
     let image: String
-    let episode : [String]
+    let episode: [String]
     let url: String
     let created: String
 }
