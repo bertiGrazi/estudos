@@ -11,7 +11,7 @@ import UIKit
 /// View for single character info
 final class RMCharacterDetailView: UIView {
     
-    private var collectionView: UICollectionView?
+    public var collectionView: UICollectionView?
     
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
@@ -69,10 +69,16 @@ final class RMCharacterDetailView: UIView {
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0))
         )
+        item.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: 0,
+            bottom: 10,
+            trailing: 0
+        )
         let group = NSCollectionLayoutGroup.vertical(
             layoutSize: NSCollectionLayoutSize(
                 widthDimension: .fractionalWidth(1.0),
-                heightDimension: .fractionalWidth(1.0)),
+                heightDimension: .absolute(150)),
             subitems: [item]
         )
         let section = NSCollectionLayoutSection(group: group)

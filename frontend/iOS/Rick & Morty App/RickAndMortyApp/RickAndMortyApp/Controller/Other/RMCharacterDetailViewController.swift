@@ -34,9 +34,10 @@ final class RMCharacterDetailViewController: UIViewController {
             action: #selector(didTapShare)
         )
         addConstrains()
+        
+        detailView.collectionView?.delegate = self
+        detailView.collectionView?.dataSource = self
     }
-    
-    
     
     @objc
     func didTapShare() {
@@ -50,5 +51,17 @@ final class RMCharacterDetailViewController: UIViewController {
             detailView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
             detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
+    }
+}
+
+extension RMCharacterDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemPink
+        return cell
     }
 }
