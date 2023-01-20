@@ -34,7 +34,6 @@ final class RMCharacterDetailViewController: UIViewController {
             action: #selector(didTapShare)
         )
         addConstrains()
-        viewModel.fetchCharacterData()
     }
     
     
