@@ -67,7 +67,7 @@ extension RMCharacterDetailViewController: UICollectionViewDelegate, UICollectio
             return 1
         case .information(viewModel: let viewModel):
             return viewModel.count
-        case .episodes(viewModel: let viewModel):
+        case .episodes(viewModels: let viewModel):
             return viewModel.count
         }
     }
@@ -85,7 +85,7 @@ extension RMCharacterDetailViewController: UICollectionViewDelegate, UICollectio
             cell.configure(with: viewModel[indexPath.row])
             cell.backgroundColor = .systemPurple
             return cell
-        case .episodes(viewModel: let viewModel):
+        case .episodes(viewModels: let viewModel):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RMCharacterEpisodeCollectionViewCell.cellIdentifer, for: indexPath) as? RMCharacterEpisodeCollectionViewCell else { fatalError() }
             cell.configure(with: viewModel[indexPath.row])
             cell.backgroundColor = .systemOrange
