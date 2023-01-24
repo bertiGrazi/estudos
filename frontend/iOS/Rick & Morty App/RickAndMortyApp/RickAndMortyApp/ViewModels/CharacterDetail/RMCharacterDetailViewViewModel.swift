@@ -14,7 +14,7 @@ final class RMCharacterDetailViewViewModel {
     enum SectionType {
         case photo(viewModel: RMCharacterPhotoCollectionViewCellViewModel)
         case information(viewModel: [RMCharacterInfoCollectionViewCellViewModel])
-        case episodes(viewModel: [RMCharacterEpisodeCollectionViewCellViewModel])
+        case episodes(viewModels: [RMCharacterEpisodeCollectionViewCellViewModel])
     }
     
     public var sections: [SectionType] = []
@@ -27,20 +27,21 @@ final class RMCharacterDetailViewViewModel {
     private func setUpSections() {
         sections = [
             .photo(viewModel:
-                    .init()
+                    .init(imageUrl: URL(string: character.image))
             ),
             .information(viewModel: [
-                .init(),
-                .init(),
-                .init(),
-                .init()
+                .init(value: character.status.text, title: "Status"),
+                .init(value: character.gender.rawValue, title: "Gender"),
+                .init(value: character.type, title: "Type"),
+                .init(value: character.species, title: "Species"),
+                .init(value: character.origin.name, title: "Origin"),
+                .init(value: character.location.name, title: "Location"),
+                .init(value: character.created, title: "Created"),
+                .init(value: "\(character.episode.count)", title: "Total Episodes"),
             ]),
-            .episodes(viewModel: [
-                .init(),
-                .init(),
-                .init(),
-                .init()
-            ])
+            .episodes(viewModels: character.episode.compactMap({
+                return RMCharacterEpisodeCollectionViewCellViewModel(episodeDataUrl: URL(string: $0))
+            }))
         ]
     }
     
