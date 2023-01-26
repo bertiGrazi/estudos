@@ -78,9 +78,9 @@ final class RMCharacterEpisodeCollectionViewCell: UICollectionViewCell {
     public func configure(with viewModel: RMCharacterEpisodeCollectionViewCellViewModel) {
         viewModel.registerForData { [weak self] dataCharacter in
             //Main Queue
-            print(String(describing: dataCharacter.name))
-            print(String(describing: dataCharacter.air_date))
-            print(String(describing: dataCharacter.episode))
+//            print(String(describing: dataCharacter.name))
+//            print(String(describing: dataCharacter.air_date))
+//            print(String(describing: dataCharacter.episode))
             self?.nameLabel.text = dataCharacter.name
             self?.seasonLabel.text = "Episode "+dataCharacter.episode
             self?.airDateLabel.text = "Aired on "+dataCharacter.air_date

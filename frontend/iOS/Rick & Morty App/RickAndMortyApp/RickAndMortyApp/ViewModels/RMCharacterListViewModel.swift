@@ -23,7 +23,7 @@ final class RMCharacterListViewModel: NSObject {
     
     private var characters: [RMCharacter] = [] {
         didSet {
-            print("Creating viewModels")
+//            print("Creating viewModels")
             for character in characters {
                 let viewModel = RMCharacterCollectionViewCellViewModel(
                     characterName: character.name,

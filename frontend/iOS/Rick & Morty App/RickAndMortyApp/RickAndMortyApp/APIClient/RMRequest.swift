@@ -15,7 +15,7 @@ final class RMRequest {
     }
     
     //Endpoint - Desired endpoint
-    private let endpoint: RMEndpoint
+    let endpoint: RMEndpoint
     
     // Path components - Path components for API, if any
     private let pathComponents: [String]
@@ -31,9 +31,9 @@ final class RMRequest {
         string += endpoint.rawValue
         
         if !pathComponents.isEmpty {
-            pathComponents.forEach {
+            pathComponents.forEach ({
                 string += "/\($0)"
-            }
+            })
         }
         
         if !queryParameters.isEmpty {
