@@ -31,9 +31,9 @@ final class RMRequest {
         string += endpoint.rawValue
         
         if !pathComponents.isEmpty {
-            pathComponents.forEach {
+            pathComponents.forEach ({
                 string += "/\($0)"
-            }
+            })
         }
         
         if !queryParameters.isEmpty {
