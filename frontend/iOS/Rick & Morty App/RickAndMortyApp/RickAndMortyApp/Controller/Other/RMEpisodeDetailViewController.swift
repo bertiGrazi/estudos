@@ -7,9 +7,11 @@
 
 import UIKit
 
+/// VC to show details about single episode
 class RMEpisodeDetailViewController: UIViewController {
     private let url: URL?
     
+    // MARK: - Init
     init(url: URL?) {
         self.url = url
         super.init(nibName: nil, bundle: nil)
@@ -19,10 +21,11 @@ class RMEpisodeDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Episode"
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemGreen
     }
 
 }
