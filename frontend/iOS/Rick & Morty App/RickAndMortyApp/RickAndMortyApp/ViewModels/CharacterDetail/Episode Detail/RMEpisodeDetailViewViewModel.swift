@@ -18,6 +18,7 @@ final class RMEpisodeDetailViewViewModel {
     private func fetchEpisodeData() {
         guard let url = endpointUrl,
               let request = RMRequest(url: url) else {
+            print(#function)
             return
         }
 
