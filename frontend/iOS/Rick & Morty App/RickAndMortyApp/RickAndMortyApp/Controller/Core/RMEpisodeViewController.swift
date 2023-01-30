@@ -35,5 +35,5 @@ final class RMEpisodeViewController: UIViewController, RMEpisodeListViewDelegate
         // Open detail controller for that episode
         let detailVC = RMEpisodeDetailViewController(url: URL(string: episode.url))
         detailVC.navigationItem.largeTitleDisplayMode = .never
-        navigationController?.pushViewController(detailVC, animated: true)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }}

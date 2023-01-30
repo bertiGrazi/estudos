@@ -11,7 +11,10 @@ import UIKit
 class RMEpisodeDetailViewController: UIViewController {
     private let viewModel:RMEpisodeDetailViewViewModel
     
+    private let detailView = RMEpisodeDetailView()
+    
     // MARK: - Init
+    
     init(url: URL?) {
         self.viewModel = .init(endpointUrl: url)
         super.init(nibName: nil, bundle: nil)
@@ -24,7 +27,13 @@ class RMEpisodeDetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubviews(detailView)
+        NSLayoutConstraint.activate([
+            detailView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            detailView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            detailView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
+            detailView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+        ])
         title = "Episode"
-        view.backgroundColor = .systemBackground
     }
 }
